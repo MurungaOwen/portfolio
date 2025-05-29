@@ -5,7 +5,7 @@ import path from 'path';
 // https://vitejs.dev/config/
 
 export default defineConfig({
-  base: '', //REPO name for deploying on github pages
+  base: '/portfolio/', //REPO name for deploying on github pages
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
