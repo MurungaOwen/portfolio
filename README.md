@@ -1,55 +1,79 @@
-# React + TypeScript + Vite
+# 🛠️ 5-Day Portfolio Development Plan  
+**Tech Stack**: React + Vite + TypeScript + Tailwind CSS  
+**Dates**: May 30 – June 3, 2025  
+**Goal**: Complete and launch a modern, responsive, and professional personal portfolio.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## ✅ Status  
+Project structure ✅ (Completed on May 29)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🗓️ 5-Day Sprint Schedule
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 📅 **Day 1 – May 30: About & Skills Section**
+**🎯 Goal**: Introduce yourself and showcase your tech stack  
+- [ ] Build `About Me` component with:
+  - Short bio (who you are, what you do, what you love)
+  - Profile picture
+- [ ] Create `Skills` component:
+  - Grouped tech stack (Languages, Frameworks, Tools)
+  - Use logos/icons for visual clarity
+- [ ] Make both sections responsive (Tailwind)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 📅 **Day 2 – May 31: Projects Section**
+**🎯 Goal**: Highlight your best work  
+- [ ] Create a reusable `ProjectCard` component
+- [ ] Add at least 3 real projects with:
+  - Title, short description, technologies used
+  - GitHub and/or live demo links
+- [ ] Optional: Add filtering by tag or category
+- [ ] Ensure responsiveness and consistent UI
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# portfolio
+### 📅 **Day 3 – June 1: Experience + Reusability**
+**🎯 Goal**: Display relevant job or project experience  
+- [ ] Create `Experience` section:
+  - Role, organization, duration, responsibilities
+- [ ] Use reusable UI components for layout consistency
+- [ ] Animate project and experience sections using Framer Motion or Tailwind transitions
+
+---
+
+### 📅 **Day 4 – June 2: Contact & Footer**
+**🎯 Goal**: Make it easy for people to reach out  
+- [ ] Build `Contact` section:
+  - Simple contact form (EmailJS or Formspree) **OR** `mailto:` links
+- [ ] Add social media links (GitHub, LinkedIn, Twitter)
+- [ ] Finalize `Footer` component with copyright
+- [ ] Perform a mobile responsiveness check
+
+---
+
+### 📅 **Day 5 – June 3: Polish, Deploy, Share**
+**🎯 Goal**: Launch portfolio & showcase your work  
+- [ ] Add meta tags, title, and favicon
+- [ ] Run Lighthouse for accessibility & performance check
+- [ ] Final bug fixing and code cleanup
+- [ ] Deploy to Vercel or Netlify
+- [ ] Share on GitHub, LinkedIn, and Twitter
+
+---
+
+## 📦 Deliverables by June 3, 2025
+- A live, responsive portfolio site
+- GitHub repository with clean, readable code
+- SEO-friendly and optimized for mobile
+- Sections: About, Skills, Projects, Experience, Contact
+- Public launch & visibility online
+
+---
+
+## 🔗 GitHub Project Board
+Track your progress here → [GitHub Project Board](#) *(Insert link to board)*
+
+
