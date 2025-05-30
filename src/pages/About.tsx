@@ -8,17 +8,15 @@ import {
   ArrowRight,
   Heart,
   BookOpen,
-  Coffee,
   Mountain,
   Palette,
   Music,
   Linkedin,
   Github,
-  Twitter,
   Mail,
   Quote
 } from 'lucide-react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import { Link } from 'react-router-dom';
 

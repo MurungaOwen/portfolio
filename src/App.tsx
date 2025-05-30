@@ -3,6 +3,8 @@ import { SidebarProvider } from './components/ui/Sidebar';
 import Layout from './components/layout';
 import About from './pages/About';
 import Home from './pages/Home';
+import Projects from './pages/Projects';
+import SkillsPage from './pages/Skills';
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path="skills" element={<SkillsPage />} />
+            <Route path="projects" element={<Projects />} />
             {/* <Route path="projects" element={<Projects />} />
-            <Route path="skills" element={<Skills />} />
+            
             <Route path="experience" element={<Experience />} />
             <Route path="contact" element={<Contact />} /> */}
           </Route>
