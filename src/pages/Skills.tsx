@@ -176,7 +176,12 @@ const techIcons: Record<string, React.ReactNode> = {
 
 const SkillsPage: React.FC = () => {
   // Skill categories with updated structure
-  const skillCategories = [
+  const skillCategories: {
+    title: string;
+    icon: React.ReactNode;
+    description: string;
+    skills: { [key: string]: string[] };
+  }[] = [
     {
       title: "Core Backend Skills",
       icon: <FaServer className="w-5 h-5" />,
