@@ -23,7 +23,7 @@ type Project = {
   thumbnail: string;
   technologies: Array<{
     name: string;
-    icon: React.ReactNode;
+    icon: React.ReactElement; // MODIFIED: Was React.ReactNode
     color: string;
   }>;
   features: string[];
@@ -40,7 +40,7 @@ type Project = {
   type: 'web' | 'mobile' | 'api' | 'fullstack';
 };
 
-// Enhanced projects data with thumbnails
+// Enhanced projects data with thumbnails (ensure icon values are JSX elements like <SiTypescript />)
 const projectsData: Project[] = [
   {
     id: '1',
@@ -85,6 +85,7 @@ const projectsData: Project[] = [
     isFeatured: true,
     type: 'fullstack'
   },
+  // ... other projects ensure 'icon' is JSX.Element
   {
     id: '2',
     title: 'Health Monitoring Dashboard',
@@ -135,7 +136,7 @@ const projectsData: Project[] = [
     category: 'Backend',
     thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
     technologies: [
-      { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' }, // Using SiExpress for Node.js as in original
+      { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' },
       { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
       { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-500' },
       { name: 'Redis', icon: <SiRedis />, color: 'text-red-600' },
@@ -287,13 +288,15 @@ const projectsData: Project[] = [
   }
 ];
 
+
 // Technology filters with icons and colors
+// Type inference should make 'icon' JSX.Element here
 const technologyFilters = [
   { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
   { name: 'React', icon: <SiReact />, color: 'text-blue-500' },
   { name: 'Next.js', icon: <SiNextdotjs />, color: 'text-gray-800' },
-  { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' }, // Using SiExpress for Node.js as in original
-  { name: 'Python', icon: <SiPython />, color: 'text-yellow-400' }, // Adjusted color for Python
+  { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' },
+  { name: 'Python', icon: <SiPython />, color: 'text-yellow-400' },
   { name: 'Django', icon: <SiDjango />, color: 'text-green-700' },
   { name: 'Docker', icon: <SiDocker />, color: 'text-blue-400' },
   { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-700' },
@@ -437,7 +440,8 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
               className={`p-1.5 rounded-md bg-gray-100 hover:bg-gray-200 transition-colors ${tech.color}`}
               title={tech.name}
             >
-              {React.cloneElement(tech.icon as React.ReactElement, { className: 'w-4 h-4' })}
+              {/* MODIFIED: More specific cast for tech.icon */}
+              {React.cloneElement(tech.icon as React.ReactElement<{ className?: string }>, { className: 'w-4 h-4' })}
             </div>
           ))}
           {project.technologies.length > 5 && (
@@ -541,7 +545,8 @@ const ProjectModal = ({ project, onClose }: { project: Project; onClose: () => v
                   key={index}
                   className="flex items-center px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors group"
                 >
-                  <span className={`mr-2 ${tech.color} group-hover:scale-110 transition-transform`}>{React.cloneElement(tech.icon as React.ReactElement, { className: 'w-4 h-4' })}</span>
+                  {/* MODIFIED: More specific cast for tech.icon */}
+                  <span className={`mr-2 ${tech.color} group-hover:scale-110 transition-transform`}>{React.cloneElement(tech.icon as React.ReactElement<{ className?: string }>, { className: 'w-4 h-4' })}</span>
                   <span className="text-sm font-medium text-gray-700">{tech.name}</span>
                 </div>
               ))}
@@ -816,7 +821,8 @@ const ProjectsPage: React.FC = () => {
                           }`
                         }
                       >
-                        <span className={`mr-1 ${isSelected ? 'text-blue-200' : tech.color}`}>{React.cloneElement(tech.icon as React.ReactElement, { className: 'w-3.5 h-3.5' })}</span>
+                        {/* MODIFIED: More specific cast for tech.icon */}
+                        <span className={`mr-1 ${isSelected ? 'text-blue-200' : tech.color}`}>{React.cloneElement(tech.icon as React.ReactElement<{ className?: string }>, { className: 'w-3.5 h-3.5' })}</span>
                         {tech.name}
                       </button>
                     );
