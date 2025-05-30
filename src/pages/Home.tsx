@@ -14,16 +14,17 @@ import {
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
+import AnimatedNumber from '@/components/ui/AnimatedNumber';
 
 const HomePage: React.FC = () => {
-  // Stats data with animation targets
+  // Stats data
   const stats = [
     { id: 1, icon: Briefcase, value: 3, suffix: '+', label: 'years experience' },
     { id: 2, icon: Code, value: 50, suffix: '+', label: 'completed projects' },
     { id: 3, icon: Layers, value: 10, suffix: '+', label: 'technologies mastered' },
   ];
 
-  // Featured projects data
+  // Featured projects data (remains the same)
   const projects = [
     {
       id: 1,
@@ -50,7 +51,7 @@ const HomePage: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
-        {/* Hero Section */}
+        {/* Hero Section (remains the same) */}
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
           <div>
             <motion.div 
@@ -124,16 +125,16 @@ const HomePage: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* Stats Section */}
+        {/* Stats Section - UPDATED */}
         <section className="mb-20">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            viewport={{ once: true }} // This animates the container
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            {stats.map((stat) => (
+            {stats.map((stat, index) => ( // Added index for staggered delay
               <div 
                 key={stat.id}
                 className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
@@ -144,9 +145,11 @@ const HomePage: React.FC = () => {
                   </div>
                   <div>
                     <div className="flex items-end">
-                      <span className="text-3xl font-bold text-gray-900">
-                        {stat.value}
-                      </span>
+                      <AnimatedNumber 
+                        targetValue={stat.value} 
+                        duration={1.5 + index * 0.2} // Stagger animation start
+                        className="text-3xl font-bold text-gray-900" 
+                      />
                       <span className="text-xl text-blue-600">{stat.suffix}</span>
                     </div>
                     <p className="text-gray-600">{stat.label}</p>
@@ -172,7 +175,7 @@ const HomePage: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* Value Proposition */}
+        {/* Value Proposition (remains the same) */}
         <section className="mb-20">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -216,7 +219,7 @@ const HomePage: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* Featured Projects */}
+        {/* Featured Projects (remains the same) */}
         <section className="mb-20">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -268,7 +271,7 @@ const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Contact CTA */}
+        {/* Contact CTA (remains the same) */}
         <section>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
