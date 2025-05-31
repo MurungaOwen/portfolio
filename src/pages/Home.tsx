@@ -15,33 +15,10 @@ import {
 import { motion } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import AnimatedNumber from '@/components/ui/AnimatedNumber';
+import {projects, stats} from '@/data/project';
+
 
 const HomePage: React.FC = () => {
-  // Stats data
-  const stats = [
-    { id: 1, icon: Briefcase, value: 3, suffix: '+', label: 'years experience' },
-    { id: 2, icon: Code, value: 50, suffix: '+', label: 'completed projects' },
-    { id: 3, icon: Layers, value: 10, suffix: '+', label: 'technologies mastered' },
-  ];
-
-  // Featured projects data (remains the same)
-  const projects = [
-    {
-      id: 1,
-      title: 'E-commerce API Platform',
-      description: 'Scalable microservices architecture for high-traffic online stores',
-      tech: ['TypeScript', 'NestJS', 'PostgreSQL', 'Docker'],
-      link: '/projects/ecommerce-api'
-    },
-    {
-      id: 2,
-      title: 'Real-time Analytics Dashboard',
-      description: 'Data processing pipeline with WebSocket integration',
-      tech: ['Python', 'FastAPI', 'Redis', 'Kubernetes'],
-      link: '/projects/analytics-dashboard'
-    }
-  ];
-
   return (
     <div className="relative overflow-hidden">
       {/* Background elements */}
@@ -61,7 +38,7 @@ const HomePage: React.FC = () => {
               className="flex items-center space-x-2 text-blue-600 mb-4"
             >
               <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
-              <span className="text-sm font-medium">BACKEND ENGINEER</span>
+              <span className="text-sm font-medium"> Software Engineer</span>
             </motion.div>
             
             <motion.h1
@@ -79,7 +56,7 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 mb-8 max-w-lg"
             >
-              I design and build scalable backend systems, APIs, and microservices with Python, TypeScript, Docker, and Kubernetes.
+              I design and build scalable systems, User Interface, APIs, and microservices with Python, TypeScript, Javascript, Docker, and Kubernetes.
             </motion.p>
             
             <motion.div
@@ -219,7 +196,6 @@ const HomePage: React.FC = () => {
           </motion.div>
         </section>
 
-        {/* Featured Projects (remains the same) */}
         <section className="mb-20">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -259,12 +235,13 @@ const HomePage: React.FC = () => {
                     ))}
                   </div>
                   
-                  <Link 
-                    to={project.link}
+                  <a 
+                    href={project.link}
+                    target="_blank"
                     className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
                   >
                     View project details <ExternalLink className="ml-1 w-4 h-4" />
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}

@@ -19,57 +19,11 @@ import {
 import { motion, useScroll, useSpring } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import { Link } from 'react-router-dom';
+import {timeline, interests} from '@/data/about';
 
 const AboutPage: React.FC = () => {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
-
-  // Timeline data
-  const timeline = [
-    {
-      year: '2015',
-      title: 'First Lines of Code',
-      description: 'Discovered programming through high school computer classes',
-      icon: Code,
-      color: 'bg-blue-100 text-blue-600'
-    },
-    {
-      year: '2018',
-      title: 'Computer Science Degree',
-      description: 'Started formal CS education at university',
-      icon: GraduationCap,
-      color: 'bg-purple-100 text-purple-600'
-    },
-    {
-      year: '2020',
-      title: 'First Professional Role',
-      description: 'Landed first job as a junior developer',
-      icon: Briefcase,
-      color: 'bg-green-100 text-green-600'
-    },
-    {
-      year: '2022',
-      title: 'Full Stack Focus',
-      description: 'Expanded skills to include frontend technologies',
-      icon: Code,
-      color: 'bg-orange-100 text-orange-600'
-    },
-    {
-      year: 'Present',
-      title: 'Continuous Growth',
-      description: 'Building complex systems and mentoring others',
-      icon: ArrowRight,
-      color: 'bg-indigo-100 text-indigo-600'
-    }
-  ];
-
-  // Personal interests
-  const interests = [
-    { icon: BookOpen, name: 'Reading', description: 'Philosophy, psychology, and sci-fi' },
-    { icon: Mountain, name: 'Hiking', description: 'Exploring nature and new trails' },
-    { icon: Palette, name: 'Digital Art', description: 'Creating abstract digital paintings' },
-    { icon: Music, name: 'Music', description: 'Playing guitar and discovering new artists' }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
@@ -332,7 +286,8 @@ const AboutPage: React.FC = () => {
             <div className="max-w-3xl mx-auto text-center">
               <Quote className="w-8 h-8 text-gray-400 mx-auto mb-6" />
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-                "I believe technology should solve real problems while bringing joy to both creators and users."
+                "Building software is not just about writing code,
+                it's about creating experiences that resonate with people." 
               </h2>
               <p className="text-gray-600 mb-8">
                 Whether it's through elegant code, thoughtful architecture, or mentoring others, 

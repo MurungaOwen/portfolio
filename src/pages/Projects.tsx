@@ -10,94 +10,74 @@ import {
   SiTypescript, SiReact, SiNextdotjs, SiNestjs,
   SiPython, SiDjango, SiDocker, SiPostgresql, SiAmazon,
   SiMongodb, SiRedis, SiTailwindcss, SiFastapi, SiExpress,
+  SiCss3,
+  SiJavascript,
+  SiHtml5,
+  SiAstro,
+  SiSanity,
+  SiNodedotjs,
+  SiGoogleappsscript,
 } from 'react-icons/si';
+import type{Project} from '@/types';
+import generousCircleThumbnail from '@/assets/generous_circle.png';
+import aiHubThumbnail from '@/assets/ai_hub.png';
+import charchomaThumbnail from '@/assets/charchoma_system.png';
+import coffeeConfessionsThumbnail from '@/assets/coffee.png';
 
-// Enhanced project type
-type Project = {
-  id: string;
-  title: string;
-  tagline: string;
-  description: string;
-  longDescription: string;
-  category: 'Full-Stack' | 'Backend' | 'Frontend' | 'API' | 'Mobile';
-  thumbnail: string;
-  technologies: Array<{
-    name: string;
-    icon: React.ReactElement; // MODIFIED: Was React.ReactNode
-    color: string;
-  }>;
-  features: string[];
-  challenges: string[];
-  outcomes: string[];
-  metrics: Array<{
-    value: string;
-    label: string;
-  }>;
-  githubUrl?: string;
-  liveUrl?: string;
-  status: 'production' | 'development' | 'archived';
-  isFeatured?: boolean;
-  type: 'web' | 'mobile' | 'api' | 'fullstack';
-};
 
-// Enhanced projects data with thumbnails (ensure icon values are JSX elements like <SiTypescript />)
 const projectsData: Project[] = [
   {
     id: '1',
-    title: 'E-Commerce Platform',
-    tagline: 'Scalable microservices e-commerce solution',
-    description: 'Full-stack e-commerce solution with microservices architecture',
-    longDescription: 'Built a comprehensive e-commerce platform using microservices architecture. Implemented product catalog, real-time inventory management, secure payment processing, and admin analytics dashboard. Achieved high availability and performance at scale.',
+    title: 'Generous Circle Donation Platform',
+    tagline: 'Scalable and secure Donation Platform',
+    description: 'Full stack Donation and Crowd funding platform',
+    longDescription: 'Built a comprehensive Crowdfunding platform with real time payment processing and user management.',
     category: 'Full-Stack',
-    thumbnail: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    thumbnail: generousCircleThumbnail,
     technologies: [
       { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
       { name: 'Next.js', icon: <SiNextdotjs />, color: 'text-gray-800' },
-      { name: 'NestJS', icon: <SiNestjs />, color: 'text-red-500' },
+      { name: 'Node.js', icon: <SiNodedotjs />, color: 'text-gray-700' },
       { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-700' },
       { name: 'Docker', icon: <SiDocker />, color: 'text-blue-400' },
       { name: 'AWS', icon: <SiAmazon />, color: 'text-amber-600' },
     ],
     features: [
-      'Microservices with API Gateway',
-      'Real-time inventory updates',
-      'Stripe payment integration',
+      'Secure Payments',
+      'Real-time payment updates',
+      'paystack payment integration',
       'Admin analytics dashboard'
     ],
     challenges: [
-      'Handling concurrent inventory updates',
-      'Implementing distributed transactions',
-      'Optimizing search performance'
+      'Handling different currency formats',
     ],
     outcomes: [
       'Reduced checkout latency by 40%',
-      'Scaled to 10K+ daily users',
+      'Scaled to 1k+ daily users',
       'Achieved 99.9% uptime'
     ],
     metrics: [
-      { value: '10K+', label: 'Daily Users' },
+      { value: '1K+', label: 'Daily Users' },
       { value: '40%', label: 'Faster Checkout' },
       { value: '99.9%', label: 'Uptime' }
     ],
-    githubUrl: 'https://github.com/username/ecommerce-platform',
-    liveUrl: 'https://ecommerce-demo.com',
+    liveUrl: 'https://app.generouscircle.com',
     status: 'production',
     isFeatured: true,
     type: 'fullstack'
   },
-  // ... other projects ensure 'icon' is JSX.Element
   {
     id: '2',
-    title: 'Health Monitoring Dashboard',
-    tagline: 'Real-time patient vitals tracking system',
+    title: 'Sanitorium Management System',
+    tagline: 'Real-time patient tracking system and EHR management',
     description: 'Healthcare dashboard for medical professionals',
-    longDescription: 'Developed a HIPAA-compliant healthcare dashboard for monitoring patient vitals in real-time. Integrated with wearable devices and hospital EHR systems with custom alerting for critical values.',
+    longDescription: 'Developed a HIPAA-compliant healthcare dashboard for monitoring patient vitals in real-time. Integrated with hospital EHR systems with custom alerting for critical values.',
     category: 'Full-Stack',
     thumbnail: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
     technologies: [
       { name: 'React', icon: <SiReact />, color: 'text-blue-500' },
-      { name: 'Python', icon: <SiPython />, color: 'text-blue-400' },
-      { name: 'Django', icon: <SiDjango />, color: 'text-green-700' },
+      { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
+      { name: 'Node.js', icon: <SiNodedotjs />, color: 'text-gray-700' },
       { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-700' },
       { name: 'Redis', icon: <SiRedis />, color: 'text-red-600' },
     ],
@@ -108,47 +88,45 @@ const projectsData: Project[] = [
       'Custom alert thresholds'
     ],
     challenges: [
-      'Ensuring real-time updates',
       'Handling large time-series data',
       'Meeting compliance requirements'
     ],
     outcomes: [
       'Reduced detection time by 65%',
-      'Integrated with 5 hospitals',
+      'Integrated with The school sanitorium',
       '24/7 monitoring'
     ],
     metrics: [
       { value: '65%', label: 'Faster Detection' },
-      { value: '5', label: 'Hospital Networks' },
+      { value: '1', label: 'Hospital Network' },
       { value: '24/7', label: 'Monitoring' }
     ],
-    githubUrl: 'https://github.com/username/health-dashboard',
+    githubUrl: 'https://github.com/T-droid/unicare',
     status: 'production',
     isFeatured: true,
     type: 'web'
   },
   {
     id: '3',
-    title: 'Task Management API',
-    tagline: 'High-performance RESTful API service',
-    description: 'RESTful task management service with advanced filtering',
-    longDescription: 'Engineered a robust backend API with advanced querying, filtering, and pagination. Implemented comprehensive authentication, rate limiting, and activity logging with 100% test coverage.',
+    title: 'Ai Hub Backend',
+    tagline: 'An Ai learning Site',
+    description: 'Ai learning platform with threaded discussions, News and Modules',
+    longDescription: 'Developed a comprehensive AI learning platform with threaded discussions, assignments, and news modules. Features include user authentication, real-time chat, and a rich text editor for discussions. Included payment integration for premium content access using Stripe checkout.',
     category: 'Backend',
-    thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    thumbnail: aiHubThumbnail,
     technologies: [
-      { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' },
-      { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
-      { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-500' },
+      { name: 'Django', icon: <SiDjango />, color: 'text-green-700' },
+      { name: 'python', icon: <SiPython />, color: 'text-yellow-500' },
+      { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-700' },
       { name: 'Redis', icon: <SiRedis />, color: 'text-red-600' },
     ],
     features: [
-      'Advanced query builder',
+      'Payment checkout on stripe',
       'JWT authentication',
       'Rate limiting',
       'Swagger documentation'
     ],
     challenges: [
-      'Designing flexible query system',
       'Implementing efficient pagination',
       'Optimizing complex queries'
     ],
@@ -162,73 +140,64 @@ const projectsData: Project[] = [
       { value: '100%', label: 'Test Coverage' },
       { value: '3', label: 'Client Apps' }
     ],
-    githubUrl: 'https://github.com/username/task-api',
+    githubUrl: 'https://github.com/MurungaOwen/ai-hub-backend',
     status: 'production',
     type: 'api'
   },
   {
     id: '4',
-    title: 'AI Analytics Platform',
-    tagline: 'Machine learning insights dashboard',
-    description: 'AI-powered analytics with predictive insights',
-    longDescription: 'Created an analytics platform that leverages machine learning for predictive insights. Features automated report generation, anomaly detection, and customizable dashboards.',
+    title: 'Google Apps Scripting Charchoma Inventory And Order Tracking',
+    tagline: 'Google Apps Dashboard for Easy entry of Orders and Data analysis',
+    description: 'A dashboard for managing inventory and orders at Charchoma hotel and giving Visualised data on trends of Orders and Inventory',
+    longDescription: 'Created a comprehensive inventory and order tracking system Using Google apps Script for Charchoma hotel. Features include real-time inventory updates, order management, and data visualization for trends analysis. Built with a focus on user experience and performance.',
     category: 'Full-Stack',
-    thumbnail: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    thumbnail: charchomaThumbnail,
     technologies: [
-      { name: 'Python', icon: <SiPython />, color: 'text-blue-400' },
-      { name: 'FastAPI', icon: <SiFastapi />, color: 'text-green-600' },
-      { name: 'React', icon: <SiReact />, color: 'text-blue-500' },
-      { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-700' },
-      { name: 'Docker', icon: <SiDocker />, color: 'text-blue-400' },
+      { name: 'google Apps Script', icon: <SiGoogleappsscript/>, color: ''},
+      { name: 'html', icon: <SiHtml5 />, color: '' },
+      // add html, css, js and google apps script
+      { name: 'css', icon: <SiCss3 />, color: '' },
+      { name: 'js', icon: <SiJavascript />, color: '' },
     ],
     features: [
-      'ML-powered predictions',
-      'Automated reporting',
-      'Custom dashboards',
+      'Order tracking And Inventory management',
+      'Trends analysis',
       'Real-time analytics'
     ],
     challenges: [
-      'Model training optimization',
-      'Real-time data processing',
-      'Scalable architecture'
+      'Handling large datasets',
     ],
     outcomes: [
       '85% prediction accuracy',
-      '50% time saved',
-      'Processed 1M+ data points'
+      '50% time saved in order entry',
     ],
     metrics: [
       { value: '85%', label: 'Accuracy' },
       { value: '50%', label: 'Time Saved' },
-      { value: '1M+', label: 'Data Points' }
     ],
-    githubUrl: 'https://github.com/username/analytics-platform',
-    liveUrl: 'https://analytics-demo.com',
     status: 'production',
     type: 'fullstack'
   },
   {
     id: '5',
-    title: 'Developer Portfolio',
-    tagline: 'Modern, performant portfolio website',
-    description: 'Personal developer portfolio and blog',
-    longDescription: 'Built a blazing-fast portfolio website with perfect Lighthouse scores. Features dark mode, blog functionality, and optimized performance with static site generation.',
+    title: 'Coffee Over Confessions',
+    tagline: 'Modern, performant and Astro based Blog site With CMS',
+    description: 'Personal blog for a friend featuring Astro SSR and Sanity CMS',
+    longDescription: 'Built a blazing-fast Blog Post with An admin CMS using Sanity For a Friend. The Project Focused on Sharing One\'s thoughts with fear of discrimination',
     category: 'Frontend',
-    thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+    thumbnail: coffeeConfessionsThumbnail,
     technologies: [
-      { name: 'Next.js', icon: <SiNextdotjs />, color: 'text-gray-800' },
-      { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
+      { name: 'Astro', icon: <SiAstro />, color: 'text-gray-800' },
+      { name: 'Sanity', icon: <SiSanity />, color: 'text-gray-600' },
       { name: 'Tailwind', icon: <SiTailwindcss />, color: 'text-cyan-500' },
     ],
     features: [
       'Perfect Lighthouse scores',
-      'Dark/light mode',
+      'Sanity Based CMS',
       'MDX blog support',
       'SEO optimized'
     ],
     challenges: [
-      'Achieving perfect scores',
-      'Smooth theme transitions',
       'Image optimization'
     ],
     outcomes: [
@@ -241,55 +210,13 @@ const projectsData: Project[] = [
       { value: '40%', label: 'Smaller Bundle' },
       { value: '<1s', label: 'Load Time' }
     ],
-    githubUrl: 'https://github.com/username/portfolio',
-    liveUrl: 'https://yourportfolio.com',
+    githubUrl: 'https://github.com/MurungaOwen/lvy-blog/',
+    liveUrl: 'https://coffee-confessions.vercel.app/',
     status: 'production',
     type: 'web'
   },
-  {
-    id: '6',
-    title: 'Chat Application',
-    tagline: 'Scalable messaging platform',
-    description: 'Real-time chat with encryption',
-    longDescription: 'Developed a real-time chat application supporting group chats, file sharing, and video calls. Implemented end-to-end encryption and horizontal scaling with Redis pub/sub.',
-    category: 'Full-Stack',
-    thumbnail: 'https://images.unsplash.com/photo-1631624215749-b10b3dd7bca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    technologies: [
-      { name: 'Node.js', icon: <SiExpress />, color: 'text-gray-700' },
-      { name: 'React', icon: <SiReact />, color: 'text-blue-500' },
-      { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-500' },
-      { name: 'Redis', icon: <SiRedis />, color: 'text-red-600' },
-      { name: 'Docker', icon: <SiDocker />, color: 'text-blue-400' },
-    ],
-    features: [
-      'WebRTC video calls',
-      'E2E encryption',
-      'File sharing',
-      'Message search'
-    ],
-    challenges: [
-      'Real-time synchronization',
-      'Encryption implementation',
-      'Horizontal scaling'
-    ],
-    outcomes: [
-      '1000+ concurrent users',
-      '<100ms message latency',
-      '99.5% uptime'
-    ],
-    metrics: [
-      { value: '1000+', label: 'Users' },
-      { value: '<100ms', label: 'Latency' },
-      { value: '99.5%', label: 'Uptime' }
-    ],
-    githubUrl: 'https://github.com/username/chat-app',
-    status: 'development',
-    type: 'fullstack'
-  }
 ];
 
-
-// Technology filters with icons and colors
 // Type inference should make 'icon' JSX.Element here
 const technologyFilters = [
   { name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
