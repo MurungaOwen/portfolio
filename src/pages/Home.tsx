@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
   Download, 
-  Briefcase, 
-  Code, 
-  Layers, 
   CheckCircle,
   Github,
   Linkedin,

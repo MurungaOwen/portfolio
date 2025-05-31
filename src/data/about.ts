@@ -1,6 +1,6 @@
 import { 
     Code, Cloud,
-    BookOpen, Mountain, Palette,
+    BookOpen, Mountain,
     Leaf, SearchCode
 } from 'lucide-react';
 import {

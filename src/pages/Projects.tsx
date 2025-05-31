@@ -7,9 +7,9 @@ import {
   FaLightbulb, FaExpand, FaUsers
 } from 'react-icons/fa';
 import {
-  SiTypescript, SiReact, SiNextdotjs, SiNestjs,
+  SiTypescript, SiReact, SiNextdotjs,
   SiPython, SiDjango, SiDocker, SiPostgresql, SiAmazon,
-  SiMongodb, SiRedis, SiTailwindcss, SiFastapi, SiExpress,
+  SiMongodb, SiRedis, SiTailwindcss, SiExpress,
   SiCss3,
   SiJavascript,
   SiHtml5,

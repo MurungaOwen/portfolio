@@ -12,7 +12,8 @@ import {
   SiTypescript, SiDjango, SiFastapi, SiNestjs, SiPostgresql, 
   SiMongodb, SiRedis, SiNextdotjs, SiTailwindcss, SiKubernetes,
   SiGraphql, SiExpress, SiMysql, SiSequelize, SiSwagger,
-  SiJest, SiPytest, SiWebpack, SiVite, SiCss3
+  SiJest, SiPytest, SiWebpack, SiVite, SiCss3,
+  SiC
 } from 'react-icons/si';
 
 // Improved SkillItem with consistent icon styling
@@ -119,6 +120,7 @@ const techIcons: Record<string, React.ReactNode> = {
   "Python": <FaPython className="text-blue-500" />,
   "JavaScript": <FaJs className="text-yellow-500" />,
   "TypeScript": <SiTypescript className="text-blue-600" />,
+  "C": <SiC className='' />,
   "JSX": <FaReact className="text-blue-500" />,
   
   // Backend Frameworks
