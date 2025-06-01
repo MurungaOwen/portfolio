@@ -18,6 +18,7 @@ import {
   SiNodedotjs,
   SiGoogleappsscript,
 } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 import type{Project} from '@/types';
 import generousCircleThumbnail from '@/assets/generous_circle.png';
 import aiHubThumbnail from '@/assets/ai_hub.png';
@@ -670,12 +671,12 @@ const ProjectsPage: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-4"
           >
-            <a
-              href="#skills" // Assuming you have a skills section with this ID elsewhere
+            <Link
+              to="/skills" // Assuming you have a skills section with this ID elsewhere
               className="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500"
             >
               Explore My Skills <FaArrowRight className="ml-2 w-4 h-4" />
-            </a>
+            </Link>
             <button
               onClick={() => setShowFilters(!showFilters)}
               className="w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg border border-gray-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"

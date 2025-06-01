@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.7",
     "@types/react-router-dom": "^5.3.3",
     "class-variance-authority": "^0.7.1",
