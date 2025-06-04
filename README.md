@@ -1,79 +1,70 @@
-# 🛠️ 5-Day Portfolio Development Plan  
-**Tech Stack**: React + Vite + TypeScript + Tailwind CSS  
-**Dates**: May 30 – June 3, 2025  
-**Goal**: Complete and launch a modern, responsive, and professional personal portfolio.
+Welcome to my personal portfolio website! This site showcases my projects, skills, and contact information, all built with modern web technologies for a fast and responsive experience.
+
+## About the Site
+
+This portfolio is built using **React** and **Vite** for a lightning-fast development experience, styled with **Tailwind CSS**, and enhanced with smooth animations via **Framer Motion**. The site is fully responsive, supports dark and light modes, and is deployed automatically to **GitHub Pages** using **GitHub Actions**.
+
+### Key Features
+
+- **Responsive Design:** Looks great on all devices.
+- **Smooth Animations:** Powered by Framer Motion.
+- **Scroll-to-Top Button:** For easy navigation.
+- **Contact Form:** Send me a message via EmailJS.
+- **Social Links:** Connect with me on various platforms.
+- **Project Showcases:** Links to my GitHub repos and live demos.
+
+## Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS
+- **Animations:** Framer Motion
+- **Contact Form:** EmailJS
+- **Hosting & Deployment:** GitHub Pages, GitHub Actions
+
+## Getting Started
+
+To run this project locally, follow these steps:
+
+```sh
+git clone https://github.com/MurungaOwen/portfolio.git
+```
+```sh
+cd portfolio
+```
+```sh
+npm install
+```
+
+```sh
+npm run dev
+```
+
+Open your browser and visit: [http://localhost:5173/portfolio/](http://localhost:5173/portfolio/)
+
+> **Tip:** You can copy any command above with the copy button in the top right corner of each code block on GitHub.
+
+## Deployment
+
+Deployment is automated with GitHub Actions. On every push to the `main` branch, the site is built and deployed to the `gh-pages` branch.
+
+To manually deploy:
+
+```sh
+npm run deploy
+```
+
+> **Note:** Ensure your Vite config has the correct `base` path (your repo name) for GitHub Pages.
+
+## Project Structure
+
+- `src/` – Main source code
+  - `components/` – Reusable React components
+  - `pages/` – Site pages
+  - `styles/` – Global styles
+  - `utils/` – Utility functions
+- `public/` – Static assets
+- `dist/` – Production build output
+- `README.md` – Project documentation
 
 ---
 
-## ✅ Status  
-Project structure ✅ (Completed on May 29)
-
----
-
-## 🗓️ 5-Day Sprint Schedule
-
-### 📅 **Day 1 – May 30: About & Skills Section**
-**🎯 Goal**: Introduce yourself and showcase your tech stack  
-- [ ] Build `About Me` component with:
-  - Short bio (who you are, what you do, what you love)
-  - Profile picture
-- [ ] Create `Skills` component:
-  - Grouped tech stack (Languages, Frameworks, Tools)
-  - Use logos/icons for visual clarity
-- [ ] Make both sections responsive (Tailwind)
-
----
-
-### 📅 **Day 2 – May 31: Projects Section**
-**🎯 Goal**: Highlight your best work  
-- [ ] Create a reusable `ProjectCard` component
-- [ ] Add at least 3 real projects with:
-  - Title, short description, technologies used
-  - GitHub and/or live demo links
-- [ ] Optional: Add filtering by tag or category
-- [ ] Ensure responsiveness and consistent UI
-
----
-
-### 📅 **Day 3 – June 1: Experience + Reusability**
-**🎯 Goal**: Display relevant job or project experience  
-- [ ] Create `Experience` section:
-  - Role, organization, duration, responsibilities
-- [ ] Use reusable UI components for layout consistency
-- [ ] Animate project and experience sections using Framer Motion or Tailwind transitions
-
----
-
-### 📅 **Day 4 – June 2: Contact & Footer**
-**🎯 Goal**: Make it easy for people to reach out  
-- [ ] Build `Contact` section:
-  - Simple contact form (EmailJS or Formspree) **OR** `mailto:` links
-- [ ] Add social media links (GitHub, LinkedIn, Twitter)
-- [ ] Finalize `Footer` component with copyright
-- [ ] Perform a mobile responsiveness check
-
----
-
-### 📅 **Day 5 – June 3: Polish, Deploy, Share**
-**🎯 Goal**: Launch portfolio & showcase your work  
-- [ ] Add meta tags, title, and favicon
-- [ ] Run Lighthouse for accessibility & performance check
-- [ ] Final bug fixing and code cleanup
-- [ ] Deploy to Vercel or Netlify
-- [ ] Share on GitHub, LinkedIn, and Twitter
-
----
-
-## 📦 Deliverables by June 3, 2025
-- A live, responsive portfolio site
-- GitHub repository with clean, readable code
-- SEO-friendly and optimized for mobile
-- Sections: About, Skills, Projects, Experience, Contact
-- Public launch & visibility online
-
----
-
-## 🔗 GitHub Project Board
-Track your progress here → [GitHub Project Board](#) *(Insert link to board)*
-
-
+Feel free to explore the code, check out my projects, and get in touch!
