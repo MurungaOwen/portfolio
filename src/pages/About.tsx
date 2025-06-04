@@ -12,6 +12,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import { Link } from 'react-router-dom';
 import {timeline, interests} from '@/data/about';
+import links from '@/data/links';
 
 const AboutPage: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -69,7 +70,7 @@ const AboutPage: React.FC = () => {
                 className="flex space-x-4"
               >
                 <a 
-                  href="https://www.linkedin.com/in/owen-murunga-5b4b69319/" 
+                  href={links.linkedin.url} 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-blue-100 text-blue-600 rounded-full hover:bg-blue-200 transition-colors"
@@ -77,7 +78,7 @@ const AboutPage: React.FC = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://github.com/MurungaOwen" 
+                  href={links.github.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-gray-100 text-gray-800 rounded-full hover:bg-gray-200 transition-colors"
@@ -85,7 +86,7 @@ const AboutPage: React.FC = () => {
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:owenhood80@gmail.com" 
+                  href={links.email.url}
                   className="p-3 bg-red-100 text-red-600 rounded-full hover:bg-red-200 transition-colors"
                 >
                   <Mail className="w-5 h-5" />

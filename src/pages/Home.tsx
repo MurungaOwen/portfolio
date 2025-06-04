@@ -13,6 +13,7 @@ import { motion } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import AnimatedNumber from '@/components/ui/AnimatedNumber';
 import {projects, stats} from '@/data/project';
+import links from '@/data/links';
 
 
 const HomePage: React.FC = () => {
@@ -69,14 +70,10 @@ const HomePage: React.FC = () => {
                 View Projects <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
               <button className="flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-full transition-all duration-200 border border-gray-200 shadow-sm hover:shadow-md">
+                <a href={links.cv.url} target="_blank" rel="noopener noreferrer" className="flex items-center">
                 Download CV <Download className="ml-2 w-4 h-4" />
+                </a>
               </button>
-              <Link 
-                to="/contact" 
-                className="flex items-center px-6 py-3 bg-transparent hover:bg-gray-100 text-gray-900 font-medium rounded-full transition-all duration-200"
-              >
-                Contact Me
-              </Link>
             </motion.div>
           </div>
           
@@ -94,6 +91,7 @@ const HomePage: React.FC = () => {
                   alt="Owen Murunga - Backend Engineer"
                   className="w-full h-auto object-cover"
                 />
+
               </div>
             </div>
           </motion.div>
@@ -193,55 +191,91 @@ const HomePage: React.FC = () => {
           </motion.div>
         </section>
 
-        <section className="mb-20">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex justify-between items-center mb-8"
-          >
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Featured Projects</h2>
-            <Link 
-              to="/projects" 
-              className="flex items-center text-blue-600 hover:text-blue-700 font-medium"
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Section Header */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4"
             >
-              See all projects <ArrowRight className="ml-1 w-4 h-4" />
-            </Link>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((project) => (
-              <motion.div
-                key={project.id}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100"
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                  Featured <span className="text-blue-600">Projects</span>
+                </h2>
+                <p className="mt-2 text-gray-600 max-w-lg">
+                  Selected works showcasing my problem-solving approach and technical expertise
+                </p>
+              </div>
+              <Link 
+                to="/projects" 
+                className="flex items-center group text-blue-600 hover:text-blue-700 font-medium transition-colors"
               >
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                Explore all projects
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+            
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {projects.map((project) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200"
+                >
+                  {/* Project Thumbnail */}
+                  <div className="relative h-48 overflow-hidden bg-gradient-to-br from-blue-50 to-gray-50">
+                    <img
+                      src={project.thumbnail || "https://source.unsplash.com/random/800x450/?tech,code"}
+                      alt={project.title}
+                      className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
                   </div>
                   
-                  <a 
-                    href={project.link}
-                    target="_blank"
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
-                  >
-                    View project details <ExternalLink className="ml-1 w-4 h-4" />
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+                  {/* Project Content */}
+                  <div className="p-6">
+                    <div className="flex flex-col h-full">
+                      <div className="flex-grow">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
+                        <p className="text-gray-600 mb-4 line-clamp-3">{project.description}</p>
+                      </div>
+                      
+                      {/* Tech Stack */}
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tech.map((tech, index) => (
+                          <motion.span
+                            key={index}
+                            whileHover={{ scale: 1.05 }}
+                            className="px-3 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full"
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+                      
+                      {/* Project Link */}
+                      <a 
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors mt-auto"
+                      >
+                        View project details
+                        <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
