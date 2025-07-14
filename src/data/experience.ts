@@ -264,6 +264,7 @@ export const education: EducationItem[] = [
     location: "Remote",
     color: "from-yellow-600 to-orange-600",
     highlights: [
+      "90 minutes online proctored exams on Kube",
       "Introduction to Kubernetes and Cloud Native technologies",
       "Hands-on experience with deploying and managing containerized applications",
       "Understanding of Kubernetes architecture and core concepts",
