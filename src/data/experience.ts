@@ -4,6 +4,55 @@ import type{ Experience, EducationItem } from "@/types";
 
 export const experiences: Experience[] = [
   {
+    "company": "COSEKE - Kenya Branch",
+    "role": "Backend and Cloud Engineer",
+    "duration": "May 2025 – Present",
+    "type": "featured",
+    "color": "from-blue-600 to-indigo-600",
+    "location": "on site",
+    "teamSize": "20+",
+    "summary": "Developing and maintaining secure, scalable backend services while managing cloud infrastructure and improving system quality through automation and documentation.",
+    "achievements": [
+      {
+        "description": "Optimized PostgreSQL queries and indexing strategies",
+        "impact": "Improved API responsiveness and reduced load times under heavy usage",
+        "metric": "40% faster response time"
+      },
+      {
+        "description": "Configured and integrated SonarQube for code quality and continuous inspection",
+        "impact": "Enabled team-wide visibility on code issues and improved maintainability",
+        "metric": "80% code coverage achieved"
+      },
+      {
+        "description": "Provisioned and orchestrated containerized services using Kubernetes and Docker",
+        "impact": "Simplified deployment workflows and ensured scalable infrastructure",
+        "metric": "3x faster deployment cycles"
+      },
+      {
+        "description": "Documented system architecture and API design for internal developer onboarding and compliance",
+        "impact": "Reduced onboarding time and improved team collaboration",
+        "metric": "100+ pages of internal documentation"
+      },
+      {
+        "description": "Implemented encryption and access controls for media files at rest",
+        "impact": "Protected sensitive documents and ensured compliance with security standards",
+        "metric": "100% encryption coverage for media storage"
+      },
+      {
+        "description": "Designed RESTful APIs for core platform modules",
+        "impact": "Enabled modular and reusable backend components",
+        "metric": "99.9% backend uptime"
+      }
+    ],
+    "technologies": [
+      { "category": "Backend", "items": ["Nest.js","Django", "TypeScript", "Sequelize", "Express.js"] },
+      { "category": "Database", "items": ["PostgreSQL", "Redis"] },
+      { "category": "DevOps", "items": ["Docker", "Kubernetes", "CI/CD", "AWS ECS"] },
+      { "category": "Quality & Security", "items": ["SonarQube", "File encryption", "Role-based access control"] },
+      { "category": "Documentation", "items": ["Markdown", "OpenAPI (Swagger)", "Confluence"] }
+    ]
+  },
+  {
     company: "Generous Circle",
     role: "Backend Developer",
     duration: "Aug 2024 – feb 2025",
