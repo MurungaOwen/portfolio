@@ -45,6 +45,13 @@ export const timeline = [
       color: 'bg-orange-100 text-orange-600'
     },
     {
+      year: '2025',
+      title: 'Cloud Computing Goal',
+      description: 'Expanding skills to include Cloud skills and DevOps practices. Doing AWS and Kubernetes',
+      icon: Cloud,
+      color: 'bg-orange-100 text-orange-600'
+    },
+    {
       year: 'Present',
       title: 'Continuous Growth',
       description: 'Building complex systems and mentoring others, Currently doing Kubernetes by Linux cloud foundation and working on code optimization',
