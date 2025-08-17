@@ -233,6 +233,18 @@ export const education: EducationItem[] = [
       "Developed multiple hands-on projects including API development and USSD applications"
     ]
   },
+  {
+    institution: "Ajira Digital Program With Emobilis",
+    degree: "Cloud computing",
+    duration: "3 months",
+    location: "Remote",
+    color: "from-green-600 to-teal-600",
+    highlights: [
+      "Completed a 3-month intensive program on Cloud Computing",
+      "Gained hands-on experience with AWS services and cloud architecture",
+      "Developed skills in deploying and managing applications in the cloud"
+    ]
+  },
  {
     institution: "ALX Africa",
     degree: "Professional Foundation",

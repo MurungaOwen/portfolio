@@ -6,7 +6,7 @@ import {
   FaPython, FaJs, FaNodeJs, FaReact, FaAws, FaDocker, 
   FaGithub, FaDatabase, FaServer, FaCloud, FaLayerGroup,
   FaBolt, FaUsers, FaArrowRight, FaCode, FaKey, FaCogs,
-  FaRocket, FaLightbulb, FaComments, FaPuzzlePiece
+  FaRocket, FaLightbulb, FaComments, FaPuzzlePiece, FaCertificate
 } from 'react-icons/fa';
 import { 
   SiTypescript, SiDjango, SiFastapi, SiNestjs, SiPostgresql, 
@@ -15,6 +15,7 @@ import {
   SiJest, SiPytest, SiWebpack, SiVite, SiCss3,
   SiC
 } from 'react-icons/si';
+import CredlyBadge from '@/components/ui/CredlyBadge';
 
 // Improved SkillItem with consistent icon styling
 const SkillItem = ({ name, icon }: { name: string; icon: React.ReactNode }) => {
@@ -387,6 +388,62 @@ const SkillsPage: React.FC = () => {
                   <p className="text-gray-600 text-sm">{skill.description}</p>
                 </motion.div>
               ))}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Certifications Section */}
+        <section className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-xl p-8 shadow-sm border border-gray-200"
+          >
+            <div className="flex items-center justify-center mb-8">
+              <FaCertificate className="w-6 h-6 text-blue-600 mr-3" />
+              <h2 className="text-2xl font-bold text-gray-900">
+                Professional Certifications
+              </h2>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-8">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <CredlyBadge badgeId="277ee05a-a443-4013-8bc0-70c2b73465f2" />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <CredlyBadge badgeId="649829b1-8a7d-49f0-bb64-547fb373c2be" />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <CredlyBadge badgeId="cd1f88d8-b22d-426d-a84c-45ddacd2f24b" />
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <CredlyBadge badgeId="5eb67c34-65e0-4096-bc8b-474995d64f5d" />
+              </motion.div>
             </div>
           </motion.div>
         </section>

@@ -7,13 +7,15 @@ import {
   Github,
   Linkedin,
   Mail,
-  ExternalLink
+  ExternalLink,
+  Award
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import AnimatedNumber from '@/components/ui/AnimatedNumber';
 import {projects, stats} from '@/data/project';
 import links from '@/data/links';
+import CredlyBadge from '@/components/ui/CredlyBadge';
 
 
 const HomePage: React.FC = () => {
@@ -189,6 +191,65 @@ const HomePage: React.FC = () => {
               ))}
             </div>
           </motion.div>
+        </section>
+
+        {/* Certifications Section */}
+        <section className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <div className="flex items-center justify-center mb-4">
+              <Award className="w-6 h-6 text-blue-600 mr-2" />
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+                Professional Certifications
+              </h2>
+            </div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Continuously learning and validating my skills through industry-recognized certifications
+            </p>
+          </motion.div>
+          
+          <div className="flex flex-wrap justify-center gap-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <CredlyBadge badgeId="277ee05a-a443-4013-8bc0-70c2b73465f2" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <CredlyBadge badgeId="649829b1-8a7d-49f0-bb64-547fb373c2be" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <CredlyBadge badgeId="cd1f88d8-b22d-426d-a84c-45ddacd2f24b" />
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <CredlyBadge badgeId="5eb67c34-65e0-4096-bc8b-474995d64f5d" />
+            </motion.div>
+          </div>
         </section>
 
         <section className="py-16 md:py-24">
