@@ -14,7 +14,6 @@ export const certifications: Certification[] = [
     issuer: 'Amazon Web Services',
     badgeId: '277ee05a-a443-4013-8bc0-70c2b73465f2',
     credlyUrl: 'https://www.credly.com/badges/277ee05a-a443-4013-8bc0-70c2b73465f2',
-    // You'll need to add the actual image URL from Credly
   },
   {
     id: '2',

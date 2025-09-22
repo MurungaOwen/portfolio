@@ -3,7 +3,7 @@ import goodlyThumbnail from '@/assets/goodly.png';
 
 
 export const stats = [
-    { id: 1, icon: Briefcase, value: 3, suffix: '+', label: 'years experience' },
+    { id: 1, icon: Briefcase, value: 4, suffix: '+', label: 'years experience' },
     { id: 2, icon: Code, value: 50, suffix: '+', label: 'completed projects' },
     { id: 3, icon: Layers, value: 10, suffix: '+', label: 'technologies mastered' },
 ];

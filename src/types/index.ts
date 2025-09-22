@@ -38,7 +38,7 @@ export type Project = {
   tagline: string;
   description: string;
   longDescription: string;
-  category: 'Full-Stack' | 'Backend' | 'Frontend' | 'API' | 'Mobile';
+  category: 'Full-Stack' | 'Backend' | 'Frontend' | 'API' | 'Mobile' | 'Extension';
   thumbnail: string;
   technologies: Array<{
     name: string;
@@ -56,5 +56,5 @@ export type Project = {
   liveUrl?: string;
   status: 'production' | 'development' | 'archived';
   isFeatured?: boolean;
-  type: 'web' | 'mobile' | 'api' | 'fullstack';
+  type: 'web' | 'mobile' | 'api' | 'fullstack' | 'Extension';
 };

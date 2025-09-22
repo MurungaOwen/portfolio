@@ -17,6 +17,11 @@ import {
   SiSanity,
   SiNodedotjs,
   SiGoogleappsscript,
+  SiNestjs,
+  SiSequelize,
+  SiVite,
+  SiChromewebstore,
+  SiFastapi
 } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import type{Project} from '@/types';
@@ -24,11 +29,90 @@ import generousCircleThumbnail from '@/assets/generous_circle.png';
 import aiHubThumbnail from '@/assets/ai_hub.png';
 import charchomaThumbnail from '@/assets/charchoma_system.png';
 import coffeeConfessionsThumbnail from '@/assets/coffee.png';
+import karmaLedgerThumbnail from '@/assets/karma_ledger.png';
+import ExtensionThumbnail from '@/assets/extension.png';
 
 
 const projectsData: Project[] = [
   {
     id: '1',
+    title: 'Karma Ledger',
+    tagline: 'A gamified growth tracker with AI insights and weekly leaderboard',
+    description: 'A gamified growth tracker with AI insights and weekly leaderboard',
+    longDescription: 'Built a personal growth tracker that awards points based on positive things done, users also complete in a weekly leaderboard and get to earn badges',
+    category: 'Full-Stack',
+    thumbnail: karmaLedgerThumbnail,
+    technologies: [
+      { name: 'Nest js', icon: <SiNestjs />, color: 'text-gray-800' },
+      { name: 'Neon Postgresql', icon: <SiPostgresql />, color: 'text-cyan-500' },
+      { name: 'Vite', icon: <SiVite/>, color: 'text-purple-600'},
+      { name: 'Tailwind', icon: <SiTailwindcss />, color: 'text-cyan-500' },
+      {name: 'TypeScript', icon: <SiTypescript />, color: 'text-blue-600' },
+      {name: 'Sequelize', icon: <SiSequelize/>, color: 'text-blue-800' }
+    ],
+    features: [
+      'Ai insights',
+      'Weekly Leaderboard',
+      'Karma Intensity Score per action',
+      'Badge awards'
+    ],
+    challenges: [
+      'Building the event driven system for listening to events that lead to badges'
+    ],
+    outcomes: [
+      '100 performance score',
+      '40% smaller bundle',
+      'Instant page loads'
+    ],
+    metrics: [
+      { value: '100', label: 'Performance' },
+      { value: '40%', label: 'Smaller Bundle' },
+      { value: '<1s', label: 'Load Time' }
+    ],
+    githubUrl: ' https://github.com/MurungaOwen/karma_ledger',
+    liveUrl: 'https://karma-ledger.vercel.app/',
+    status: 'production',
+    type: 'web'
+  },
+  {
+    id: '2',
+    title: 'Phishing Shield Extension',
+    tagline: 'A Phishing site shield and url link scanning chrome extension',
+    description: 'A chrome extension that scans urls you visit and blocks access if the URL is malicious',
+    longDescription: 'Built a chrome extension that analyses security of a site, check for it in phishTank database of malicious sites also uses google safe site api\n it determines if site you are accessing is secure and also if it contains viruses and gives a score',
+    category: 'Full-Stack',
+    thumbnail: ExtensionThumbnail,
+    technologies: [
+      { name: 'chrome manifest', icon: <SiChromewebstore />, color: 'text-gray-800' },
+      { name: 'fastApi', icon: <SiFastapi />, color: 'text-cyan-500' },
+      { name: 'Python', icon: <SiPython />, color: 'text-cyan-500' },
+      {name: 'Javascript', icon: <SiJavascript />, color: 'text-yellow-400' },
+      {name: 'Html', icon: <SiHtml5/>, color: 'text-blue-800' }
+    ],
+    features: [
+      'Malicious site blocking',
+      'Virus scanning',
+      'Safe site scoring',
+    ],
+    challenges: [
+      'PhishTank was blocked by cloudflare due to User-Agent in header field and also phishtank didnt allow signing up for new users but i found a work around'
+    ],
+    outcomes: [
+      'Site Rating ',
+      'Instant and fast site scanning',
+      'correct scoring of sites based on Apis and also weight based scoring',
+      'Utilising google safe site api to detect if site is malicious'
+    ],
+    metrics: [
+      { value: '100', label: 'Performance' },
+    ],
+    githubUrl: ' https://github.com/MurungaOwen/alx_ai_capstone.git',
+    liveUrl: 'https://github.com/MurungaOwen/alx_ai_capstone.git',
+    status: 'production',
+    type: 'Extension'
+  },
+  {
+    id: '3',
     title: 'Generous Circle Donation Platform',
     tagline: 'Scalable and secure Donation Platform',
     description: 'Full stack Donation and Crowd funding platform',
@@ -68,7 +152,7 @@ const projectsData: Project[] = [
     type: 'fullstack'
   },
   {
-    id: '2',
+    id: '4',
     title: 'Sanitorium Management System',
     tagline: 'Real-time patient tracking system and EHR management',
     description: 'Healthcare dashboard for medical professionals',
@@ -108,7 +192,7 @@ const projectsData: Project[] = [
     type: 'web'
   },
   {
-    id: '3',
+    id: '5',
     title: 'Ai Hub Backend',
     tagline: 'An Ai learning Site',
     description: 'Ai learning platform with threaded discussions, News and Modules',
@@ -146,7 +230,7 @@ const projectsData: Project[] = [
     type: 'api'
   },
   {
-    id: '4',
+    id: '6',
     title: 'Google Apps Scripting Charchoma Inventory And Order Tracking',
     tagline: 'Google Apps Dashboard for Easy entry of Orders and Data analysis',
     description: 'A dashboard for managing inventory and orders at Charchoma hotel and giving Visualised data on trends of Orders and Inventory',
@@ -180,7 +264,7 @@ const projectsData: Project[] = [
     type: 'fullstack'
   },
   {
-    id: '5',
+    id: '7',
     title: 'Coffee Over Confessions',
     tagline: 'Modern, performant and Astro based Blog site With CMS',
     description: 'Personal blog for a friend featuring Astro SSR and Sanity CMS',
@@ -265,7 +349,8 @@ const ProjectCard = ({ project, onClick }: { project: Project; onClick: () => vo
     web: <FaCode className="w-4 h-4" />,
     mobile: <FaMobileAlt className="w-4 h-4" />,
     api: <FaServer className="w-4 h-4" />,
-    fullstack: <FaDatabase className="w-4 h-4" />
+    fullstack: <FaDatabase className="w-4 h-4" />,
+    Extension: <FaMobileAlt className="w-4 h-4"/>
   };
 
   return (
