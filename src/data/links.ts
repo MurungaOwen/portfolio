@@ -6,7 +6,7 @@ const links = {
     color: '#181717',
   },
   linkedin: {
-    url: 'https://www.linkedin.com/in/owen-murunga/',
+    url: 'https://www.linkedin.com/in/owen-murunga-5b4b69319/',
     icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg',
     color: '#0077B5',
   },
