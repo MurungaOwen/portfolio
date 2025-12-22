@@ -31,6 +31,7 @@ import charchomaThumbnail from '@/assets/charchoma_system.png';
 import coffeeConfessionsThumbnail from '@/assets/coffee.png';
 import karmaLedgerThumbnail from '@/assets/karma_ledger.png';
 import ExtensionThumbnail from '@/assets/extension.png';
+import WasteManagerThumbnail from '@/assets/waste_manager.png';
 
 
 const projectsData: Project[] = [
@@ -300,6 +301,45 @@ const projectsData: Project[] = [
     status: 'production',
     type: 'web'
   },
+    {
+    id: '8',
+    title: 'Waste Manager',
+    tagline: 'IoT-enabled waste tracking MVP for transparency and accountability',
+    description: 'A pilot web application demonstrating an IoT-driven waste management concept with real-time tracking and user onboarding via a waitlist.',
+    longDescription: 'Built an MVP and pilot platform for a smart waste management system leveraging IoT concepts to improve transparency in waste collection and handling. The project focuses on showcasing how waste data can be tracked, visualized, and trusted, while onboarding early users through a waitlist for future iterations.',
+    category: 'Frontend',
+    thumbnail: WasteManagerThumbnail,
+    technologies: [
+      { name: 'HTML', icon: <SiHtml5 />, color: 'text-orange-500' },
+      { name: 'CSS', icon: <SiCss3 />, color: 'text-blue-500' },
+      { name: 'JavaScript', icon: <SiJavascript />, color: 'text-yellow-400' },
+      { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'text-cyan-500' },
+    ],
+    features: [
+      'IoT-based waste management concept',
+      'User waitlist onboarding',
+      'Responsive and mobile-friendly UI',
+      'Clean and accessible landing experience',
+    ],
+    challenges: [
+      'Communicating complex IoT ideas through a simple MVP',
+      'Designing a lightweight frontend with no backend',
+    ],
+    outcomes: [
+      'Functional MVP deployed for public access',
+      'Clear validation platform for early adopters',
+      'Foundation laid for future IoT integrations',
+    ],
+    metrics: [
+      { value: 'MVP', label: 'Project Stage' },
+      { value: '100%', label: 'Static Deployment' },
+      { value: 'Fast', label: 'Page Load' },
+    ],
+    githubUrl: 'https://github.com/MurungaOwen/waste_manager',
+    liveUrl: 'http://murungaowen.github.io/waste_manager',
+    status: 'development',
+    type: 'web'
+  }
 ];
 
 // Type inference should make 'icon' JSX.Element here
