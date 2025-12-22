@@ -16,7 +16,7 @@ export const projects = [
     title: 'IoT Waste Manager',
     description: 'IoT-enabled waste tracking MVP for transparency and accountability in waste management.',
     tech: ['HTML', 'CSS', 'JavaScript', 'IoT'],
-    link: 'https://github.com/MurungaOwen/waste_manager',
+    link: 'https://murungaowen.github.io/waste_manager',
     thumbnail: WasteManagerThumbnail
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
     title: 'Ephemeral chat',
     description: 'A chat application where messages self-destruct after being read, ensuring privacy and confidentiality in conversations.',
     tech: ['Html', 'css', 'Node.js', 'websockets'],
-    link: '',
+    link: 'https://github.com/MurungaOwen/ephemeral_chat_app',
     thumbnail: chatThumbnail
   },
 
