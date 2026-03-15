@@ -131,7 +131,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
           {!isCollapsed && (
             <div className="p-6 border-b border-gray-100 flex-shrink-0">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 bg-stone-900 rounded-xl flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-lg">H</span>
                 </div>
                 <div>
@@ -145,7 +145,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
           {/* Collapsed Header */}
           {isCollapsed && (
             <div className="flex justify-center py-6 border-b border-gray-100 flex-shrink-0">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
+              <div className="w-8 h-8 bg-stone-900 rounded-lg flex items-center justify-center shadow-md">
                 <span className="text-white font-bold text-sm">H</span>
               </div>
             </div>
@@ -201,7 +201,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
             <div className={`flex items-center p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-200 ${
               isCollapsed ? 'justify-center' : 'space-x-3'
             }`}>
-              <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+              <div className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
                 <span className="text-white font-semibold text-sm">OM</span>
               </div>
               {!isCollapsed && (
