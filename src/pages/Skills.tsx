@@ -83,7 +83,7 @@ const SkillCategoryCard = ({
     >
       <div className="p-6">
         <div className="flex items-center mb-5">
-          <div className="p-3 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg mr-4 group-hover:from-blue-100 group-hover:to-blue-200 transition-colors">
+          <div className="p-3 bg-blue-100 rounded-lg mr-4 transition-colors">
             <div className="text-blue-600">
               {icon}
             </div>
@@ -280,7 +280,7 @@ const SkillsPage: React.FC = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="relative overflow-hidden bg-stone-100">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-100 rounded-full opacity-10 blur-3xl"></div>
@@ -306,7 +306,7 @@ const SkillsPage: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
           >
-            My <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Technical Arsenal</span>
+            My <span className="text-stone-900 underline decoration-blue-600 decoration-2 underline-offset-4">Technical Arsenal</span>
           </motion.h1>
           
           <motion.p
@@ -326,7 +326,7 @@ const SkillsPage: React.FC = () => {
           >
             <Link 
               to="/projects" 
-              className="flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center px-6 py-3 bg-stone-900 hover:bg-black text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               View My Projects <FaArrowRight className="ml-2 w-4 h-4" />
             </Link>
