@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experiences",
+  "info": {
+    "singularName": "experience",
+    "pluralName": "experiences",
+    "displayName": "Experience",
+    "description": "Professional and project experience"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "company": {
+      "type": "string",
+      "required": true
+    },
+    "role": {
+      "type": "string",
+      "required": true
+    },
+    "duration": {
+      "type": "string",
+      "required": true
+    },
+    "summary": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["featured", "project"],
+      "default": "featured"
+    },
+    "location": {
+      "type": "string"
+    },
+    "teamSize": {
+      "type": "string"
+    },
+    "technologies": {
+      "type": "json"
+    },
+    "highlights": {
+      "type": "json"
+    },
+    "githubUrl": {
+      "type": "string"
+    },
+    "demoUrl": {
+      "type": "string"
+    }
+  }
+}

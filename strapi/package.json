@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Strapi backend for portfolio CMS",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "^5.0.0",
+    "@strapi/plugin-users-permissions": "^5.0.0",
+    "@strapi/strapi": "^5.0.0",
+    "better-sqlite3": "^11.7.0",
+    "pg": "^8.13.1"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=22.x.x",
+    "npm": ">=6.0.0"
+  },
+  "strapi": {
+    "uuid": "portfolio-strapi-cloud"
+  }
+}
