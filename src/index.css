@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -115,6 +116,14 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    background-color: #f5f5f4;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Fraunces", Georgia, serif;
   }
 }
