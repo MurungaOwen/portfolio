@@ -19,10 +19,10 @@ const AboutPage: React.FC = () => {
   const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <div className="min-h-screen bg-stone-100 relative overflow-hidden">
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-stone-900 transform origin-left z-50"
         style={{ scaleX }}
       />
 
@@ -100,14 +100,14 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-3xl opacity-20 blur-xl"></div>
+              <div className="absolute -inset-4 bg-stone-900 rounded-3xl opacity-10 blur-xl"></div>
               <div className="relative bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-100">
                 <img 
                   src={profileImg} 
                   alt="Owen Murunga"
                   className="w-full h-auto object-cover"
                 />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-6">
                   <motion.div 
                     whileHover={{ x: 5 }}
                     className="flex items-center text-white"
@@ -174,7 +174,7 @@ const AboutPage: React.FC = () => {
 
         {/* Philosophy Section */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8 md:p-12">
+          <div className="bg-stone-200 rounded-3xl p-8 md:p-12">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
