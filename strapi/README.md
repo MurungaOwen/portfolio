@@ -7,7 +7,8 @@ This folder is now a full Strapi backend scaffold for your portfolio CMS.
 1. Push this repo to GitHub.
 2. In Strapi Cloud, choose **Import from Git**.
 3. Set **Root Directory** to `strapi`.
-4. Deploy.
+4. Set Node version to `20` in Strapi Cloud (or via `.nvmrc`).
+5. Deploy.
 
 ## Required env vars in Strapi Cloud
 

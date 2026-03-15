@@ -42,6 +42,79 @@ Open your browser and visit: [http://localhost:5173/portfolio/](http://localhost
 
 > **Tip:** You can copy any command above with the copy button in the top right corner of each code block on GitHub.
 
+## Strapi CMS Setup
+
+The `Projects` and `Experience` pages now support Strapi as a content source.
+
+1. Import this repo into Strapi Cloud with **Root Directory** set to `strapi`.
+2. Create these collections:
+   - `projects`
+   - `experiences`
+3. In Strapi Cloud, create an API token with read access for these collections.
+4. Add environment values in `.env`:
+
+```sh
+VITE_STRAPI_URL='https://your-project-name.strapiapp.com'
+VITE_STRAPI_API_TOKEN='your-read-only-token'
+```
+
+5. In Strapi Cloud settings, allow your frontend origin in CORS (for local dev and production).
+
+### Recommended `projects` fields
+
+- `title` (Text)
+- `description` (Long text)
+- `tagline` (Text)
+- `category` (Text or Enumeration)
+- `technologies` (JSON array of strings, or component list with `name`)
+- `thumbnail` (Media, single)
+- `liveUrl` (Text)
+- `githubUrl` (Text)
+- `status` (Enumeration: production/development/archived)
+- `isFeatured` (Boolean)
+
+### Recommended `experiences` fields
+
+- `company` (Text)
+- `role` (Text)
+- `duration` (Text)
+- `summary` (Long text)
+- `type` (Enumeration: featured/project)
+- `location` (Text)
+- `teamSize` (Text)
+- `technologies` (JSON array or grouped component)
+- `highlights` (JSON array of strings or component list)
+- `githubUrl` (Text) and `demoUrl` (Text) or nested `links`
+
+If Strapi is not configured, the app automatically falls back to local portfolio data.
+
+## Seed Existing Portfolio Data Into Strapi
+
+You can seed your current hard-coded portfolio content into Strapi with:
+
+```sh
+npm run seed:strapi
+```
+
+The script upserts records into:
+- `projects` (matched by `title`)
+- `experiences` (matched by `company`)
+
+### Required env vars for seeding
+
+```sh
+STRAPI_URL='https://your-project-name.strapiapp.com'
+STRAPI_API_TOKEN='your-token-with-create-update-permissions'
+```
+
+The script also accepts `VITE_STRAPI_URL` and `VITE_STRAPI_API_TOKEN` as fallback names.
+
+### Dry run
+
+```sh
+npm run seed:strapi -- --dry-run
+```
+
 ## Deployment
 
 Deployment is automated with GitHub Actions. On every push to the `main` branch, the site is built and deployed to the `gh-pages` branch.
