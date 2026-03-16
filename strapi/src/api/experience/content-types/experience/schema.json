@@ -27,7 +27,7 @@
       "type": "text",
       "required": true
     },
-    "experienceType": {
+    "type": {
       "type": "enumeration",
       "enum": ["featured", "project"],
       "default": "featured"

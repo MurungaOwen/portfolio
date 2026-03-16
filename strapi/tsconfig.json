@@ -6,13 +6,12 @@
     "lib": ["ES2020"],
     "allowJs": true,
     "checkJs": false,
-    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "strict": false,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "rootDir": ".",
-    "outDir": "dist"
+    "strict": false,
+    "noEmit": true
   },
-  "include": ["src/**/*.js", "config/**/*.js"],
+  "include": ["./**/*.js"],
   "exclude": ["node_modules", "build", "dist", ".cache", ".tmp"]
 }
