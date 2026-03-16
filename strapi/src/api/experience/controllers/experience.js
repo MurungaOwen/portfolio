@@ -2,4 +2,4 @@
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::experiences.experiences');
+module.exports = createCoreController('api::experience.experience');

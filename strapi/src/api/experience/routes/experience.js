@@ -2,4 +2,4 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::experiences.experiences');
+module.exports = createCoreRouter('api::experience.experience');

@@ -40,7 +40,7 @@
     "githubUrl": {
       "type": "string"
     },
-    "status": {
+    "projectStatus": {
       "type": "enumeration",
       "enum": ["production", "development", "archived"],
       "default": "production"

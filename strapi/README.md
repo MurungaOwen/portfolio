@@ -44,3 +44,17 @@ npm run develop
 ```
 
 The admin panel opens at `http://localhost:1337/admin`.
+
+## Seed data
+
+From the `strapi/` folder, run:
+
+```sh
+# preview changes only
+STRAPI_URL=http://localhost:1337 STRAPI_API_TOKEN=<token> npm run seed:dry
+
+# apply upserts
+STRAPI_URL=http://localhost:1337 STRAPI_API_TOKEN=<token> npm run seed
+```
+
+This uses `../scripts/seed-strapi.mjs` and upserts your `projects` and `experiences` entries by unique fields.
