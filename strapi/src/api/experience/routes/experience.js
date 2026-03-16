@@ -2,4 +2,9 @@
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::experience.experience');
+try {
+  module.exports = createCoreRouter('api::experience.experience');
+} catch (error) {
+  console.error('[router-init] failed for api::experience.experience');
+  throw error;
+}
