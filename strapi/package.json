@@ -5,6 +5,7 @@
   "description": "Strapi backend for portfolio CMS",
   "scripts": {
     "develop": "strapi develop",
+    "prestart": "strapi build",
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
