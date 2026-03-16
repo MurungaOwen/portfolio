@@ -75,11 +75,11 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-stone-100 min-h-screen">
+    <div className="relative overflow-hidden bg-[#050706] min-h-screen">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-64 h-64 bg-blue-100 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-64 h-64 bg-purple-100 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute top-20 right-20 w-64 h-64 bg-lime-400/15 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-64 h-64 bg-zinc-800 rounded-full opacity-10 blur-3xl"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -89,7 +89,7 @@ const ContactPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center items-center space-x-2 text-blue-600 mb-4"
+            className="flex justify-center items-center space-x-2 text-lime-300 mb-4"
           >
             <FaPaperPlane className="w-5 h-5" />
             <span className="text-sm font-medium tracking-wider">GET IN TOUCH</span>
@@ -99,16 +99,16 @@ const ContactPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-zinc-100 mb-6"
           >
-            Let's <span className="text-stone-900 underline decoration-blue-600 decoration-2 underline-offset-4">Connect</span>
+            Let's <span className="text-lime-300 underline decoration-lime-400 decoration-2 underline-offset-4">Connect</span>
           </motion.h1>
           
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto"
+            className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto"
           >
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you.
           </motion.p>
@@ -122,20 +122,20 @@ const ContactPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200"
+            className="bg-[#090b09] rounded-2xl shadow-lg p-8 border border-zinc-800"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h2>
+            <h2 className="text-2xl font-bold text-zinc-100 mb-6">Contact Information</h2>
             
             <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-blue-100 rounded-lg text-blue-600">
+                <div className="p-3 bg-lime-400/15 rounded-lg text-lime-300">
                   <FaEnvelope className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
+                  <h3 className="text-lg font-semibold text-zinc-100 mb-1">Email</h3>
                   <a 
                     href="mailto:owenhood80@gmail.com" 
-                    className="text-blue-600 hover:text-blue-700 transition-colors"
+                    className="text-lime-300 hover:text-lime-200 transition-colors"
                   >
                     owenhood80@gmail.com
                   </a>
@@ -143,14 +143,14 @@ const ContactPage: React.FC = () => {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-purple-100 rounded-lg text-purple-600">
+                <div className="p-3 bg-zinc-800 rounded-lg text-zinc-300">
                   <FaPhone className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Phone</h3>
+                  <h3 className="text-lg font-semibold text-zinc-100 mb-1">Phone</h3>
                   <a 
                     href="tel:+254712345678" 
-                    className="text-gray-700 hover:text-gray-900 transition-colors"
+                    className="text-zinc-300 hover:text-zinc-100 transition-colors"
                   >
                     +254 114 884 211
                   </a>
@@ -158,24 +158,24 @@ const ContactPage: React.FC = () => {
               </div>
               
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-green-100 rounded-lg text-green-600">
+                <div className="p-3 bg-zinc-800 rounded-lg text-zinc-300">
                   <FaMapMarkerAlt className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">Location</h3>
-                  <p className="text-gray-700">Nairobi, Kenya</p>
+                  <h3 className="text-lg font-semibold text-zinc-100 mb-1">Location</h3>
+                  <p className="text-zinc-300">Nairobi, Kenya</p>
                 </div>
               </div>
             </div>
             
             <div className="mt-10">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Connect with me</h3>
+              <h3 className="text-lg font-semibold text-zinc-100 mb-4">Connect with me</h3>
               <div className="flex space-x-4">
                 <a 
                   href="https://www.linkedin.com/in/owen-murunga-5b4b69319/" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-blue-50 hover:bg-blue-100 text-blue-600 rounded-full transition-colors"
+                  className="p-3 bg-lime-400/10 hover:bg-lime-400/15 text-lime-300 rounded-full transition-colors"
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="w-5 h-5" />
@@ -184,7 +184,7 @@ const ContactPage: React.FC = () => {
                   href="https://github.com/MurungaOwen" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-full transition-colors"
+                  className="p-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-300 rounded-full transition-colors"
                   aria-label="GitHub"
                 >
                   <FaGithub className="w-5 h-5" />
@@ -193,7 +193,7 @@ const ContactPage: React.FC = () => {
                   href="https://www.upwork.com/freelancers/~yourprofile" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-green-100 hover:bg-green-200 text-green-500 rounded-full transition-colors"
+                  className="p-3 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 rounded-full transition-colors"
                   aria-label="Upwork"
                 >
                   <SiUpwork className="w-5 h-5" />
@@ -208,21 +208,21 @@ const ContactPage: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200"
+            className="bg-[#090b09] rounded-2xl shadow-lg p-8 border border-zinc-800"
           >
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Me a Message</h2>
+            <h2 className="text-2xl font-bold text-zinc-100 mb-6">Send Me a Message</h2>
             
             {isSubmitted ? (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="bg-green-50 border border-green-200 rounded-lg p-6 text-center"
+                className="bg-zinc-900/70 border border-lime-500/40 rounded-lg p-6 text-center"
               >
                 <div className="flex justify-center mb-4">
                   <FaCheckCircle className="w-10 h-10 text-green-500" />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800 mb-2">Message Sent!</h3>
-                <p className="text-green-700">
+                <h3 className="text-xl font-semibold text-lime-200 mb-2">Message Sent!</h3>
+                <p className="text-lime-300">
                   Thank you for reaching out. I'll get back to you as soon as possible.
                 </p>
               </motion.div>
@@ -232,16 +232,16 @@ const ContactPage: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6 flex items-center space-x-3"
+                    className="bg-zinc-900/70 border border-red-500/40 rounded-lg p-4 mb-6 flex items-center space-x-3"
                   >
                     <FaExclamationTriangle className="w-5 h-5 text-red-500 flex-shrink-0" />
-                    <p className="text-red-700 text-sm">{submitError}</p>
+                    <p className="text-red-300 text-sm">{submitError}</p>
                   </motion.div>
                 )}
                 
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="name" className="block text-sm font-medium text-zinc-300 mb-1">
                       Your Name
                     </label>
                     <input
@@ -252,13 +252,13 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-zinc-700 rounded-lg focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-zinc-950 text-zinc-100"
                       placeholder="John Doe"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="email" className="block text-sm font-medium text-zinc-300 mb-1">
                       Email Address
                     </label>
                     <input
@@ -269,13 +269,13 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-zinc-700 rounded-lg focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-zinc-950 text-zinc-100"
                       placeholder="you@example.com"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-zinc-300 mb-1">
                       Your Message
                     </label>
                     <textarea
@@ -286,7 +286,7 @@ const ContactPage: React.FC = () => {
                       onChange={handleChange}
                       required
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full px-4 py-3 border border-zinc-700 rounded-lg focus:ring-2 focus:ring-lime-400 focus:border-lime-400 transition-all disabled:opacity-50 disabled:cursor-not-allowed bg-zinc-950 text-zinc-100"
                       placeholder="Tell me about your project..."
                     ></textarea>
                   </div>
@@ -295,7 +295,7 @@ const ContactPage: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center px-6 py-3 bg-stone-900 hover:bg-black text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full flex items-center justify-center px-6 py-3 bg-lime-400 hover:bg-lime-300 text-zinc-950 font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <>
@@ -323,20 +323,20 @@ const ContactPage: React.FC = () => {
           viewport={{ once: true }}
           className="mt-20 text-center"
         >
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Looking for something else?</h2>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <h2 className="text-2xl font-bold text-zinc-100 mb-4">Looking for something else?</h2>
+          <p className="text-zinc-400 mb-6 max-w-2xl mx-auto">
             Check out my projects or learn more about my skills and experience.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/projects"
-              className="flex items-center px-6 py-3 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-lg transition-all duration-300 border border-gray-300 shadow-sm hover:shadow-md"
+              className="flex items-center px-6 py-3 bg-[#090b09] hover:bg-zinc-900/60 text-zinc-100 font-medium rounded-lg transition-all duration-300 border border-zinc-700 shadow-sm hover:shadow-md"
             >
               View Projects
             </Link>
             <Link
               to="/experience"
-              className="flex items-center px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+              className="flex items-center px-6 py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 font-medium rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
             >
               My Experience
             </Link>

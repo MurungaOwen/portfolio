@@ -34,12 +34,12 @@ const SkillItem = ({ name, icon }: { name: string; icon: React.ReactNode }) => {
       animate={controls}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
-      className="flex items-center space-x-2 bg-white rounded-lg px-3 py-2 hover:bg-blue-50 transition-colors duration-200 border border-gray-200 hover:border-blue-200 shadow-xs"
+      className="flex items-center space-x-2 bg-[#090b09] rounded-lg px-3 py-2 hover:bg-lime-400/10 transition-colors duration-200 border border-zinc-800 hover:border-zinc-700 shadow-xs"
     >
-      <div className="w-5 h-5 text-gray-700 flex items-center justify-center">
+      <div className="w-5 h-5 text-zinc-300 flex items-center justify-center">
         {icon}
       </div>
-      <span className="text-sm font-medium text-gray-700">{name}</span>
+      <span className="text-sm font-medium text-zinc-300">{name}</span>
     </motion.div>
   );
 };
@@ -79,31 +79,31 @@ const SkillCategoryCard = ({
       initial={{ opacity: 0, y: 30 }}
       animate={controls}
       whileHover={{ y: -5 }}
-      className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-200 group"
+      className="bg-[#090b09] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-zinc-800 group"
     >
       <div className="p-6">
         <div className="flex items-center mb-5">
-          <div className="p-3 bg-blue-100 rounded-lg mr-4 transition-colors">
-            <div className="text-blue-600">
+          <div className="p-3 bg-lime-400/15 rounded-lg mr-4 transition-colors">
+            <div className="text-lime-300">
               {icon}
             </div>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-            <p className="text-gray-500 text-sm mt-1">{description}</p>
+            <h3 className="text-xl font-bold text-zinc-100">{title}</h3>
+            <p className="text-zinc-500 text-sm mt-1">{description}</p>
           </div>
         </div>
         
         <div className="space-y-4">
           {Object.entries(skills).map(([subcategory, skills]) => (
             <div key={subcategory}>
-              <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">{subcategory}</h4>
+              <h4 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">{subcategory}</h4>
               <div className="flex flex-wrap gap-2">
                 {skills.map((skill, skillIndex) => (
                   <SkillItem 
                     key={skillIndex} 
                     name={skill} 
-                    icon={techIcons[skill] || <FaCode className="text-gray-500" />} 
+                    icon={techIcons[skill] || <FaCode className="text-zinc-500" />} 
                   />
                 ))}
               </div>
@@ -120,7 +120,7 @@ const techIcons: Record<string, React.ReactNode> = {
   // Languages
   "Python": <FaPython className="text-blue-500" />,
   "JavaScript": <FaJs className="text-yellow-500" />,
-  "TypeScript": <SiTypescript className="text-blue-600" />,
+  "TypeScript": <SiTypescript className="text-lime-300" />,
   "C": <SiC className='' />,
   "JSX": <FaReact className="text-blue-500" />,
   
@@ -129,7 +129,7 @@ const techIcons: Record<string, React.ReactNode> = {
   "FastAPI": <SiFastapi className="text-teal-500" />,
   "Node.js": <FaNodeJs className="text-green-600" />,
   "NestJS": <SiNestjs className="text-red-500" />,
-  "Express": <SiExpress className="text-gray-700" />,
+  "Express": <SiExpress className="text-zinc-300" />,
   
   // API & Auth
   "REST": <FaServer className="text-blue-500" />,
@@ -145,7 +145,7 @@ const techIcons: Record<string, React.ReactNode> = {
   
   // Databases
   "PostgreSQL": <SiPostgresql className="text-blue-700" />,
-  "MySQL": <SiMysql className="text-blue-600" />,
+  "MySQL": <SiMysql className="text-lime-300" />,
   "MongoDB": <SiMongodb className="text-green-600" />,
   "Redis": <SiRedis className="text-red-600" />,
   
@@ -153,7 +153,7 @@ const techIcons: Record<string, React.ReactNode> = {
   "Drizzle ORM": <FaDatabase className="text-blue-500" />,
   "Sequelize": <SiSequelize className="text-blue-400" />,
   "Django ORM": <SiDjango className="text-green-700" />,
-  "SQLAlchemy": <FaDatabase className="text-blue-600" />,
+  "SQLAlchemy": <FaDatabase className="text-lime-300" />,
   
   // Cloud
   "AWS (EC2, S3, Lambda)": <FaAws className="text-amber-600" />,
@@ -174,7 +174,7 @@ const techIcons: Record<string, React.ReactNode> = {
   
   // Other
   "Git & GitHub": <FaGithub className="text-gray-800" />,
-  "Agile/Scrum": <FaCogs className="text-gray-600" />,
+  "Agile/Scrum": <FaCogs className="text-zinc-400" />,
 };
 
 const SkillsPage: React.FC = () => {
@@ -280,10 +280,10 @@ const SkillsPage: React.FC = () => {
   ];
 
   return (
-    <div className="relative overflow-hidden bg-stone-100">
+    <div className="relative overflow-hidden bg-[#050706]">
       {/* Decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-100 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-lime-400/15 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute bottom-1/3 -left-20 w-96 h-96 bg-purple-100 rounded-full opacity-10 blur-3xl"></div>
       </div>
 
@@ -294,7 +294,7 @@ const SkillsPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center items-center space-x-2 text-blue-600 mb-4"
+            className="flex justify-center items-center space-x-2 text-lime-300 mb-4"
           >
             <FaCode className="w-5 h-5" />
             <span className="text-sm font-medium tracking-wider">TECHNICAL MASTERY</span>
@@ -304,7 +304,7 @@ const SkillsPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+            className="text-4xl md:text-5xl font-bold text-zinc-100 mb-6"
           >
             My <span className="text-stone-900 underline decoration-blue-600 decoration-2 underline-offset-4">Technical Arsenal</span>
           </motion.h1>
@@ -313,7 +313,7 @@ const SkillsPage: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto"
+            className="text-lg text-zinc-400 mb-8 max-w-2xl mx-auto"
           >
             Carefully curated technologies I use to build performant, scalable systems
           </motion.p>
@@ -326,7 +326,7 @@ const SkillsPage: React.FC = () => {
           >
             <Link 
               to="/projects" 
-              className="flex items-center px-6 py-3 bg-stone-900 hover:bg-black text-white font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              className="flex items-center px-6 py-3 bg-lime-400 hover:bg-lime-300 text-zinc-950 font-medium rounded-full transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               View My Projects <FaArrowRight className="ml-2 w-4 h-4" />
             </Link>
@@ -340,7 +340,7 @@ const SkillsPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-gray-900 mb-8 text-center"
+            className="text-2xl font-bold text-zinc-100 mb-8 text-center"
           >
             Technical Skills Breakdown
           </motion.h2>
@@ -365,9 +365,9 @@ const SkillsPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl p-8 shadow-sm border border-gray-200"
+            className="bg-[#090b09] rounded-xl p-8 shadow-sm border border-zinc-800"
           >
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <h2 className="text-2xl font-bold text-center text-zinc-100 mb-8">
               Soft Skills & Approach
             </h2>
             
@@ -379,13 +379,13 @@ const SkillsPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-5 rounded-lg bg-gray-50 hover:bg-white transition-colors duration-300 text-center border border-gray-100 hover:border-blue-100"
+                  className="p-5 rounded-lg bg-zinc-900/60 hover:bg-[#090b09] transition-colors duration-300 text-center border border-zinc-800 hover:border-zinc-700"
                 >
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 mx-auto text-blue-600">
+                  <div className="w-12 h-12 bg-lime-400/15 rounded-full flex items-center justify-center mb-4 mx-auto text-lime-300">
                     {skill.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{skill.title}</h3>
-                  <p className="text-gray-600 text-sm">{skill.description}</p>
+                  <h3 className="text-lg font-semibold text-zinc-100 mb-2">{skill.title}</h3>
+                  <p className="text-zinc-400 text-sm">{skill.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -399,11 +399,11 @@ const SkillsPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl p-8 shadow-sm border border-gray-200"
+            className="bg-[#090b09] rounded-xl p-8 shadow-sm border border-zinc-800"
           >
             <div className="flex items-center justify-center mb-8">
-              <FaCertificate className="w-6 h-6 text-blue-600 mr-3" />
-              <h2 className="text-2xl font-bold text-gray-900">
+              <FaCertificate className="w-6 h-6 text-lime-300 mr-3" />
+              <h2 className="text-2xl font-bold text-zinc-100">
                 Professional Certifications
               </h2>
             </div>
@@ -455,9 +455,9 @@ const SkillsPage: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white rounded-xl p-8 shadow-sm border border-gray-200"
+            className="bg-[#090b09] rounded-xl p-8 shadow-sm border border-zinc-800"
           >
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            <h2 className="text-2xl font-bold text-center text-zinc-100 mb-8">
               Engineering Philosophy
             </h2>
             
@@ -469,13 +469,13 @@ const SkillsPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="p-5 rounded-lg bg-gray-50 hover:bg-white transition-colors duration-300 border border-gray-100 hover:border-blue-100"
+                  className="p-5 rounded-lg bg-zinc-900/60 hover:bg-[#090b09] transition-colors duration-300 border border-zinc-800 hover:border-zinc-700"
                 >
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 bg-lime-400/15 rounded-full flex items-center justify-center mb-4">
                     {principle.icon}
                   </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{principle.title}</h3>
-                  <p className="text-gray-600 text-sm">{principle.description}</p>
+                  <h3 className="text-lg font-semibold text-zinc-100 mb-2">{principle.title}</h3>
+                  <p className="text-zinc-400 text-sm">{principle.description}</p>
                 </motion.div>
               ))}
             </div>

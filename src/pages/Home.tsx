@@ -11,77 +11,162 @@ const HomePage: React.FC = () => {
   const visibleProjects = featured.length > 0 ? featured : projects.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-stone-100 text-stone-900">
-      <section className="relative overflow-hidden border border-stone-300 bg-stone-50 p-8 md:p-12">
-        <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:radial-gradient(#57534e_1px,transparent_1px)] [background-size:18px_18px]" />
+    <div className="min-h-screen bg-[#050706] text-zinc-100">
+
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden border border-zinc-900 bg-[#090b09] p-8 md:p-12">
+        <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:18px_18px]" />
 
         <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-8">
-            <p className="mb-4 inline-flex items-center border border-stone-900 px-3 py-1 text-xs uppercase tracking-[0.2em]">
-              Backend Engineer · Nairobi
-            </p>
-            <h1 className="max-w-3xl text-4xl font-black leading-tight md:text-6xl">
-              I build reliable systems and interfaces with personality.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-stone-700 md:text-lg">
-              Portfolio content now supports a CMS workflow, so projects and experience can be updated from Strapi instead
-              of editing source files every time.
-            </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+          {/* LEFT — copy */}
+          <div className="lg:col-span-8 flex flex-col justify-center">
+
+            {/* eyebrow */}
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="mb-6 inline-flex w-fit items-center border border-lime-400/60 px-3 py-1 text-xs uppercase tracking-[0.2em] text-lime-300"
+            >
+              Software & Infra Engineer · Nairobi, Kenya
+            </motion.p>
+
+            {/* headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.08 }}
+              className="max-w-3xl text-4xl font-black leading-[1.05] tracking-tight md:text-6xl"
+            >
+              I write code that{' '}
+              <span className="text-lime-400">solves real problems</span>
+              {' '}— from the first line{' '}
+              <em className="not-italic text-zinc-400">to production.</em>
+            </motion.h1>
+
+            {/* sub-copy */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.18 }}
+              className="mt-6 max-w-xl text-[15px] leading-[1.75] text-zinc-400"
+            >
+              Software engineer with a strong grip on backend architecture,
+              cloud infrastructure, and payment integrations. I build
+              complete, production-ready software — clean APIs, reliable
+              services, and interfaces people actually want to use.
+            </motion.p>
+
+            {/* proof points */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.26 }}
+              className="mt-8 flex flex-wrap gap-x-8 gap-y-2"
+            >
+              {[
+                '4+ years shipping production code',
+                'Software & Infra · Payments · Cloud',
+                'Kenya · Remote-ready',
+              ].map((point) => (
+                <span key={point} className="flex items-center gap-2 text-[13px] text-zinc-500">
+                  <span className="h-1 w-1 rounded-full bg-lime-400 flex-shrink-0" />
+                  {point}
+                </span>
+              ))}
+            </motion.div>
+
+            {/* CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.34 }}
+              className="mt-10 flex flex-wrap gap-3"
+            >
               <Link
                 to="/projects"
-                className="inline-flex items-center border border-stone-900 bg-stone-900 px-5 py-3 text-sm font-semibold text-stone-50 transition hover:bg-stone-700"
+                className="inline-flex items-center border border-lime-400 bg-lime-400 px-5 py-3 text-sm font-bold text-zinc-950 transition hover:bg-lime-300"
               >
-                View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                See My Work <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <a
                 href={links.cv.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center border border-stone-400 bg-stone-50 px-5 py-3 text-sm font-semibold transition hover:border-stone-900"
+                className="inline-flex items-center border border-zinc-700 bg-transparent px-5 py-3 text-sm font-semibold text-zinc-300 transition hover:border-zinc-500 hover:text-zinc-100"
               >
                 Download CV <Download className="ml-2 h-4 w-4" />
               </a>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="lg:col-span-4">
-            <div className="border border-stone-300 bg-stone-200 p-3">
-              <img src={profileImg} alt="Owen Murunga" className="aspect-[4/5] w-full object-cover grayscale" />
-              <div className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-stone-700">
-                <span>Software Engineer</span>
-                <span>Open to Work</span>
+          {/* RIGHT — photo card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.97 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="lg:col-span-4"
+          >
+            <div className="border border-zinc-800 bg-zinc-950 p-3">
+              <img
+                src={profileImg}
+                alt="Owen Murunga"
+                className="aspect-[4/5] w-full object-cover grayscale"
+              />
+              <div className="mt-3 flex items-center justify-between text-xs uppercase tracking-[0.2em] text-zinc-500">
+                <span>Software & Infra Engineer</span>
+                <span className="text-lime-300">Open to Work</span>
               </div>
             </div>
 
             <div className="mt-4 flex gap-2">
-              <a href={links.github.url} target="_blank" rel="noopener noreferrer" className="border border-stone-300 p-2 hover:bg-stone-200">
+              <a href={links.github.url} target="_blank" rel="noopener noreferrer"
+                className="border border-zinc-800 p-2 text-zinc-300 hover:bg-zinc-900 transition-colors">
                 <Github className="h-4 w-4" />
               </a>
-              <a href={links.linkedin.url} target="_blank" rel="noopener noreferrer" className="border border-stone-300 p-2 hover:bg-stone-200">
+              <a href={links.linkedin.url} target="_blank" rel="noopener noreferrer"
+                className="border border-zinc-800 p-2 text-zinc-300 hover:bg-zinc-900 transition-colors">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href={links.email.url} className="border border-stone-300 p-2 hover:bg-stone-200">
+              <a href={links.email.url}
+                className="border border-zinc-800 p-2 text-zinc-300 hover:bg-zinc-900 transition-colors">
                 <Mail className="h-4 w-4" />
               </a>
             </div>
-          </div>
+
+            {/* mini value prop */}
+            <p className="mt-5 text-[11px] leading-relaxed text-zinc-600 uppercase tracking-[0.14em]">
+              "Readable code. Reliable systems. Real outcomes."
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="mt-10 border border-stone-300 bg-stone-50 p-8 md:p-10">
+      {/* ── FEATURED WORK ── */}
+      <section className="mt-8 border border-zinc-900 bg-[#090b09] p-8 md:p-10">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
-          <h2 className="text-3xl font-bold">Featured Work</h2>
-          {usingFallback && (
-            <span className="border border-amber-600 px-2 py-1 text-xs uppercase tracking-wider text-amber-700">
-              Local fallback data
-            </span>
-          )}
+          <div>
+            <p className="mb-1 text-[10px] uppercase tracking-[0.2em] text-lime-400">// selected projects</p>
+            <h2 className="text-3xl font-black tracking-tight">Featured Work</h2>
+          </div>
+          <div className="flex items-center gap-3">
+            {usingFallback && (
+              <span className="border border-amber-500/60 px-2 py-1 text-xs uppercase tracking-wider text-amber-300">
+                Local fallback data
+              </span>
+            )}
+            <Link
+              to="/projects"
+              className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.14em] text-zinc-500 hover:text-lime-400 transition-colors"
+            >
+              All projects <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
         </div>
 
         {loading ? (
-          <p className="text-stone-600">Loading projects...</p>
+          <p className="text-zinc-500 text-sm">Loading projects…</p>
         ) : (
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {visibleProjects.map((project, index) => (
@@ -91,20 +176,31 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.25, delay: index * 0.08 }}
-                className="border border-stone-300 bg-white p-4"
+                className="group border border-zinc-800 bg-[#050706] p-4 transition-colors hover:border-zinc-700"
               >
-                <div className="mb-3 aspect-video overflow-hidden border border-stone-200 bg-stone-100">
+                <div className="mb-4 aspect-video overflow-hidden border border-zinc-800 bg-zinc-950">
                   {project.thumbnailUrl ? (
-                    <img src={project.thumbnailUrl} alt={project.title} className="h-full w-full object-cover" />
+                    <img
+                      src={project.thumbnailUrl}
+                      alt={project.title}
+                      className="h-full w-full object-cover opacity-85 transition-transform duration-500 group-hover:scale-105"
+                    />
                   ) : (
-                    <div className="flex h-full items-center justify-center text-sm text-stone-500">No image</div>
+                    <div className="flex h-full items-center justify-center text-xs uppercase tracking-widest text-zinc-700">
+                      No preview
+                    </div>
                   )}
                 </div>
-                <h3 className="text-lg font-semibold">{project.title}</h3>
-                <p className="mt-2 text-sm text-stone-600">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+                <h3 className="text-base font-bold text-zinc-100 group-hover:text-lime-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-[13px] leading-relaxed text-zinc-500">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
                   {project.technologies.slice(0, 4).map((tech) => (
-                    <span key={`${project.id}-${tech}`} className="border border-stone-300 px-2 py-1 text-xs uppercase">
+                    <span
+                      key={`${project.id}-${tech}`}
+                      className="border border-zinc-800 px-2 py-0.5 text-[10px] uppercase tracking-wider text-zinc-600"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -114,6 +210,7 @@ const HomePage: React.FC = () => {
           </div>
         )}
       </section>
+
     </div>
   );
 };
