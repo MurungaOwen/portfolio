@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { fetchExperiences, isStrapiConfigured } from '@/services/cms';
 import type { CmsExperience } from '@/types/cms';
 
@@ -9,32 +9,14 @@ interface UseExperiencesResult {
 }
 
 export const useExperiences = (): UseExperiencesResult => {
-  const [experiences, setExperiences] = useState<CmsExperience[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let active = true;
-
-    const loadExperiences = async () => {
-      const items = await fetchExperiences();
-      if (!active) {
-        return;
-      }
-
-      setExperiences(items);
-      setLoading(false);
-    };
-
-    loadExperiences();
-
-    return () => {
-      active = false;
-    };
-  }, []);
+  const { data, isPending } = useQuery<CmsExperience[]>({
+    queryKey: ['cms', 'experiences'],
+    queryFn: fetchExperiences,
+  });
 
   return {
-    experiences,
-    loading,
+    experiences: data ?? [],
+    loading: isPending && !data,
     usingFallback: !isStrapiConfigured(),
   };
 };
