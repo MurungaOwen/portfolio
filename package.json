@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "seed:strapi": "node scripts/seed-strapi.mjs",
+    "seed:strapi": "node --env-file=.env --env-file=strapi/.env scripts/seed-strapi.mjs",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

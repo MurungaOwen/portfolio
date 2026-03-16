@@ -70,7 +70,7 @@ VITE_STRAPI_API_TOKEN='your-read-only-token'
 - `thumbnail` (Media, single)
 - `liveUrl` (Text)
 - `githubUrl` (Text)
-- `status` (Enumeration: production/development/archived)
+- `projectStatus` (Enumeration: production/development/archived)
 - `isFeatured` (Boolean)
 
 ### Recommended `experiences` fields
@@ -79,7 +79,7 @@ VITE_STRAPI_API_TOKEN='your-read-only-token'
 - `role` (Text)
 - `duration` (Text)
 - `summary` (Long text)
-- `type` (Enumeration: featured/project)
+- `experienceType` (Enumeration: featured/project)
 - `location` (Text)
 - `teamSize` (Text)
 - `technologies` (JSON array or grouped component)
@@ -114,6 +114,21 @@ The script also accepts `VITE_STRAPI_URL` and `VITE_STRAPI_API_TOKEN` as fallbac
 ```sh
 npm run seed:strapi -- --dry-run
 ```
+
+### GitHub Action seeding (Strapi Cloud)
+
+A workflow is included at:
+
+- `.github/workflows/seed-strapi.yml`
+
+It can run:
+- manually (`workflow_dispatch`)
+- automatically after your deploy workflow succeeds
+
+Set these repository secrets:
+
+- `STRAPI_URL` (e.g. `https://your-project-name.strapiapp.com`)
+- `STRAPI_API_TOKEN` (token with create/update permissions on `projects` and `experiences`)
 
 ## Deployment
 
