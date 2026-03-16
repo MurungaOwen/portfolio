@@ -10,8 +10,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": false,
-    "noEmit": true
+    "rootDir": ".",
+    "outDir": "dist"
   },
-  "include": ["./**/*.js"],
+  "include": ["src/**/*.js", "config/**/*.js"],
   "exclude": ["node_modules", "build", "dist", ".cache", ".tmp"]
 }
