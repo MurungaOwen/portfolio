@@ -117,8 +117,8 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       {showSidebar && (
         <div
           className={`
-            ${isDesktop ? 'fixed' : 'fixed'} left-0 top-0 h-screen bg-white shadow-2xl z-40
-            flex flex-col border-r border-gray-100 overflow-hidden
+            ${isDesktop ? 'fixed' : 'fixed'} left-0 top-0 h-screen bg-[#070907] shadow-2xl z-40
+            flex flex-col border-r border-zinc-900 overflow-hidden
             transition-all duration-300 ease-in-out
             ${isDesktop 
               ? (isSidebarOpen ? 'w-64' : 'w-16') 
@@ -129,30 +129,33 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
         >
           {/* Header */}
           {!isCollapsed && (
-            <div className="p-6 border-b border-gray-100 flex-shrink-0">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-stone-900 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-white font-bold text-lg">H</span>
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900">Hood</h1>
-                  <p className="text-xs text-gray-500 mt-0.5">Portfolio</p>
+            <div className="p-6 border-b border-zinc-900 flex-shrink-0">
+              <div className="mb-4 flex items-center space-x-3">
+                <div className="h-12 w-12 rounded-full border-2 border-lime-400 bg-lime-300 flex items-center justify-center shadow-[0_0_18px_rgba(163,230,53,0.35)]">
+                  <span className="text-zinc-950 font-black text-lg">OM</span>
                 </div>
               </div>
+              <h1 className="text-3xl font-black text-zinc-100 leading-none">Owen Murunga</h1>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.22em] text-lime-400">// Portfolio v2.0</p>
             </div>
           )}
 
           {/* Collapsed Header */}
           {isCollapsed && (
-            <div className="flex justify-center py-6 border-b border-gray-100 flex-shrink-0">
-              <div className="w-8 h-8 bg-stone-900 rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-sm">H</span>
+            <div className="flex justify-center py-6 border-b border-zinc-900 flex-shrink-0">
+              <div className="h-9 w-9 rounded-full border border-lime-400 bg-lime-300 flex items-center justify-center shadow-md">
+                <span className="text-zinc-950 font-black text-xs">OM</span>
               </div>
             </div>
           )}
 
           {/* Navigation */}
           <nav className="flex-1 px-3 py-6 space-y-1 min-h-0">
+            {!isCollapsed && (
+              <p className="px-3 pb-3 text-[10px] font-semibold uppercase tracking-[0.26em] text-zinc-500">
+                Navigate
+              </p>
+            )}
             {menuItems.map((item) => {
               const IconComponent = item.icon;
               const isActive = isActiveRoute(item.href);
@@ -163,22 +166,22 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
                     to={item.href}
                     onClick={() => handleItemClick(item.id)}
                     className={`
-                      w-full flex items-center px-3 py-3 rounded-xl text-left transition-all duration-200 group/item
+                      w-full flex items-center px-3 py-3 text-left transition-all duration-200 group/item
                       ${isCollapsed ? 'justify-center' : 'justify-start space-x-3'}
                       ${isActive 
-                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/25' 
-                        : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                        ? 'bg-lime-400/10 text-lime-300 border-l-2 border-lime-400' 
+                        : 'text-zinc-500 hover:bg-zinc-900/40 hover:text-zinc-200'
                       }
-                      ${isCollapsed ? 'group-hover:scale-105' : 'hover:translate-x-1'}
+                      ${isCollapsed ? 'group-hover:scale-105' : ''}
                     `}
                   >
                     <IconComponent 
                       className={`w-5 h-5 flex-shrink-0 transition-colors duration-200 ${
-                        isActive ? 'text-white' : 'text-gray-500 group-hover/item:text-gray-700'
+                        isActive ? 'text-lime-300' : 'text-zinc-600 group-hover/item:text-zinc-300'
                       }`} 
                     />
                     {!isCollapsed && (
-                      <span className="font-medium text-sm truncate">
+                      <span className="font-medium text-base truncate">
                         {item.label}
                       </span>
                     )}
@@ -186,9 +189,9 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
                   
                   {/* Tooltip when collapsed */}
                   {isCollapsed && (
-                    <div className="absolute left-full ml-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50 shadow-xl">
+                    <div className="absolute left-full ml-3 px-3 py-2 bg-zinc-950 text-zinc-100 text-sm rounded-lg opacity-0 pointer-events-none group-hover:opacity-100 transition-all duration-200 whitespace-nowrap z-50 shadow-xl border border-zinc-800">
                       {item.label}
-                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-gray-900 rotate-45"></div>
+                      <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1 w-2 h-2 bg-zinc-950 rotate-45 border-l border-t border-zinc-800"></div>
                     </div>
                   )}
                 </div>
@@ -197,17 +200,17 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
           </nav>
 
           {/* Footer */}
-          <div className="p-4 border-t border-gray-100 flex-shrink-0">
-            <div className={`flex items-center p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-200 ${
+          <div className="p-4 border-t border-zinc-900 flex-shrink-0">
+            <div className={`flex items-center p-3 rounded-xl bg-zinc-900/40 hover:bg-zinc-900/70 transition-colors duration-200 border border-zinc-800 ${
               isCollapsed ? 'justify-center' : 'space-x-3'
             }`}>
-              <div className="w-10 h-10 bg-stone-800 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
-                <span className="text-white font-semibold text-sm">OM</span>
+              <div className="w-10 h-10 bg-zinc-950 border border-lime-500/40 rounded-full flex items-center justify-center flex-shrink-0 shadow-md">
+                <span className="text-lime-300 font-semibold text-xs">OM</span>
               </div>
               {!isCollapsed && (
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold text-gray-900 truncate">Owen Murunga</p>
-                  <p className="text-xs text-gray-500 truncate">Software Engineer</p>
+                  <p className="text-sm font-semibold text-zinc-200 truncate">Owen Murunga</p>
+                  <p className="text-xs text-zinc-500 truncate">Software Engineer</p>
                 </div>
               )}
             </div>
@@ -237,14 +240,14 @@ export const SidebarToggle: React.FC = () => {
     return (
       <button
         onClick={toggleSidebar}
-        className="fixed top-4 z-50 p-2.5 bg-white rounded-xl shadow-lg hover:bg-gray-50 transition-all duration-300 hover:shadow-xl border border-gray-100"
+        className="fixed top-4 z-50 p-2.5 bg-zinc-950 rounded-xl shadow-lg hover:bg-black transition-all duration-300 hover:shadow-xl border border-zinc-800"
         style={{ left: isSidebarOpen ? '240px' : '52px' }}
         aria-label="Toggle sidebar"
       >
         {isSidebarOpen ? (
-          <X className="w-5 h-5 text-gray-700" />
+          <X className="w-5 h-5 text-zinc-300" />
         ) : (
-          <Menu className="w-5 h-5 text-gray-700" />
+          <Menu className="w-5 h-5 text-zinc-300" />
         )}
       </button>
     );
@@ -254,13 +257,13 @@ export const SidebarToggle: React.FC = () => {
   return (
     <button
       onClick={toggleSidebar}
-      className="fixed top-4 left-4 z-50 p-2.5 bg-white rounded-xl shadow-lg hover:bg-gray-50 transition-all duration-300 hover:shadow-xl border border-gray-100"
+      className="fixed top-4 left-4 z-50 p-2.5 bg-zinc-950 rounded-xl shadow-lg hover:bg-black transition-all duration-300 hover:shadow-xl border border-zinc-800"
       aria-label="Toggle sidebar"
     >
       {isSidebarOpen ? (
-        <X className="w-5 h-5 text-gray-700" />
+        <X className="w-5 h-5 text-zinc-300" />
       ) : (
-        <Menu className="w-5 h-5 text-gray-700" />
+        <Menu className="w-5 h-5 text-zinc-300" />
       )}
     </button>
   );

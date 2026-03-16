@@ -10,7 +10,7 @@ const Layout: React.FC<LayoutProps> = ({ className = '' }) => {
   const { isSidebarOpen } = useSidebar();
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-[#050706]">
       {/* Mobile Toggle Button */}
       <SidebarToggle />
       
