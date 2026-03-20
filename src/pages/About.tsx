@@ -14,8 +14,9 @@ import {
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import profileImg from '@/assets/owenmurunga.png';
 import { Link } from 'react-router-dom';
-import { timeline, interests } from '@/data/about';
+import { interests } from '@/data/about';
 import links from '@/data/links';
+import Journey3D from '@/components/ui/Journey3D';
 
 /* ─────────────────────────────────────────────
    Tiny reusable components
@@ -207,55 +208,9 @@ const AboutPage: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* centre line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-800 -translate-x-1/2" />
-
-            <div className="space-y-0">
-              {timeline.map((item, index) => {
-                const isLeft = index % 2 === 0;
-                return (
-                  <motion.div
-                    key={index}
-                    {...inView(index * 0.5)}
-                    className={`relative flex items-center ${isLeft ? 'flex-row' : 'flex-row-reverse'}`}
-                  >
-                    {/* content side */}
-                    <div className={`w-[calc(50%-40px)] py-8 ${isLeft ? 'pr-10 text-right' : 'pl-10 text-left'}`}>
-                      <motion.div
-                        whileHover={{ x: isLeft ? -4 : 4 }}
-                        className="inline-block group"
-                      >
-                        <div
-                          className={`inline-flex items-center gap-2 mb-2 text-[10px] font-mono tracking-[0.14em] uppercase text-zinc-600 ${
-                            isLeft ? 'flex-row-reverse' : 'flex-row'
-                          }`}
-                        >
-                          <span>{item.year}</span>
-                        </div>
-                        <h3 className="text-lg font-bold text-zinc-100 mb-1 group-hover:text-lime-400 transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-[13px] text-zinc-500 leading-relaxed">{item.description}</p>
-                      </motion.div>
-                    </div>
-
-                    {/* dot */}
-                    <div className="w-20 flex-shrink-0 flex items-center justify-center relative z-10">
-                      <div
-                        className={`w-10 h-10 rounded-full border-2 border-zinc-800 flex items-center justify-center shadow-lg ${item.color}`}
-                      >
-                        <item.icon className="w-4 h-4" />
-                      </div>
-                    </div>
-
-                    {/* empty side */}
-                    <div className="w-[calc(50%-40px)]" />
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
+          <motion.div {...inView(0.2)}>
+            <Journey3D />
+          </motion.div>
         </section>
 
         <Divider />

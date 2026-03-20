@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { useProjects } from '@/hooks/useProjects';
 import type { CmsProject } from '@/types/cms';
+import ProjectShader from '@/components/ui/ProjectShader';
 
 const ProjectsPage: React.FC = () => {
   const { projects, loading, usingFallback } = useProjects();
@@ -77,11 +78,9 @@ const ProjectsPage: React.FC = () => {
             >
               <div className="relative m-6 mb-0 aspect-video overflow-hidden border border-zinc-800 bg-[#0b1020]">
                 {project.thumbnailUrl ? (
-                  <img
-                    src={project.thumbnailUrl}
-                    alt={project.title}
-                    className="h-full w-full object-cover opacity-70 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-90"
-                  />
+                  <div className="absolute inset-0 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                    <ProjectShader url={project.thumbnailUrl} />
+                  </div>
                 ) : (
                   <div className="h-full w-full bg-[radial-gradient(circle_at_20%_20%,rgba(163,230,53,0.12),transparent_32%),linear-gradient(180deg,#0f1528,#0a0f1f)]" />
                 )}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Sidebar, { SidebarToggle, useSidebar } from '../ui/Sidebar';
 
@@ -8,26 +8,27 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ className = '' }) => {
   const { isSidebarOpen } = useSidebar();
+  const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' && window.innerWidth >= 1024);
+
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1024);
+    // Initial check
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <div className="flex min-h-screen bg-[#050706]">
-      {/* Mobile Toggle Button */}
+    <div className="flex min-h-[100dvh] w-full bg-[#050706] relative overflow-x-hidden">
       <SidebarToggle />
-      
-      {/* Desktop Toggle Button */}
-      {/* <DesktopSidebarToggle /> */}
-      
-      {/* Sidebar */}
       <Sidebar />
       
-      {/* Main Content */}
       <main className={`
-        flex-1 transition-all duration-300 
-        lg:ml-0
-        ${isSidebarOpen && window.innerWidth >= 1024 ? 'lg:ml-64' : 'lg:ml-16'}
+        flex-1 flex flex-col min-w-0 transition-all duration-300 relative
+        ${isDesktop ? (isSidebarOpen ? 'ml-64' : 'ml-16') : 'ml-0 w-full'}
         ${className}
       `}>
-        <div className="p-4 lg:p-8 pt-16 lg:pt-8">
+        <div className="w-full flex-1 p-5 pb-24 lg:p-8 pt-24 lg:pt-8 shadow-inner">
           <Outlet />
         </div>
       </main>

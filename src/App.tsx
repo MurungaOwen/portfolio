@@ -7,10 +7,12 @@ import Projects from './pages/Projects';
 import SkillsPage from './pages/Skills';
 import Experience from './pages/Experience';
 import ContactPage from './pages/Contact';
+import GlobalCursor from './components/ui/GlobalCursor';
 
 function App() {
   return (
     <SidebarProvider>
+      <GlobalCursor />
       <Router basename="/portfolio">
         <Routes>
           <Route path="/" element={<Layout />}>

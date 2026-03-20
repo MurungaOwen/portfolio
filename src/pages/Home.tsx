@@ -4,6 +4,7 @@ import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
 import profileImg from '@/assets/owenmurunga.png';
 import links from '@/data/links';
 import { useProjects } from '@/hooks/useProjects';
+import Hero3D from '@/components/ui/Hero3D';
 
 const HomePage: React.FC = () => {
   const { projects, loading, usingFallback } = useProjects();
@@ -16,8 +17,11 @@ const HomePage: React.FC = () => {
       {/* ── HERO ── */}
       <section className="relative overflow-hidden border border-zinc-900 bg-[#090b09] p-8 md:p-12">
         <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:radial-gradient(#3f3f46_1px,transparent_1px)] [background-size:18px_18px]" />
+        
+        {/* 3D Background Feature */}
+        <Hero3D />
 
-        <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-12">
+        <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-12 z-10">
 
           {/* LEFT — copy */}
           <div className="lg:col-span-8 flex flex-col justify-center">
@@ -39,10 +43,10 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.08 }}
               className="max-w-3xl text-4xl font-black leading-[1.05] tracking-tight md:text-6xl"
             >
-              I write code that{' '}
-              <span className="text-lime-400">solves real problems</span>
-              {' '}— from the first line{' '}
-              <em className="not-italic text-zinc-400">to production.</em>
+              Engineering{' '}
+              <span className="text-lime-400">resilient systems</span>
+              {' '}— where clean code meets{' '}
+              <em className="not-italic text-zinc-400">robust infrastructure.</em>
             </motion.h1>
 
             {/* sub-copy */}

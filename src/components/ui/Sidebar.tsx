@@ -117,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
       {showSidebar && (
         <div
           className={`
-            ${isDesktop ? 'fixed' : 'fixed'} left-0 top-0 h-screen bg-[#070907] shadow-2xl z-40
+            fixed left-0 top-0 h-[100dvh] bg-[#070907] shadow-[20px_0_40px_rgba(0,0,0,0.5)] z-50
             flex flex-col border-r border-zinc-900 overflow-hidden
             transition-all duration-300 ease-in-out
             ${isDesktop 
@@ -150,7 +150,7 @@ const Sidebar: React.FC<SidebarProps> = ({ className = '' }) => {
           )}
 
           {/* Navigation */}
-          <nav className="flex-1 px-3 py-6 space-y-1 min-h-0">
+          <nav className="flex-1 px-3 py-6 space-y-1 min-h-0 overflow-y-auto">
             {!isCollapsed && (
               <p className="px-3 pb-3 text-[10px] font-semibold uppercase tracking-[0.26em] text-zinc-500">
                 Navigate
