@@ -2,8 +2,14 @@ import { experiences as localExperiences } from '@/data/experience';
 import { projects as localProjects } from '@/data/project';
 import type { CmsExperience, CmsProject } from '@/types/cms';
 
-const STRAPI_URL = (import.meta.env.VITE_STRAPI_URL as string | undefined)?.replace(/\/$/, '');
-const STRAPI_TOKEN = import.meta.env.VITE_STRAPI_API_TOKEN as string | undefined;
+const sanitizeEnv = (value: string | undefined): string =>
+  (value ?? '')
+    .trim()
+    .replace(/^['"]/, '')
+    .replace(/['"]$/, '');
+
+const STRAPI_URL = sanitizeEnv(import.meta.env.VITE_STRAPI_URL as string | undefined).replace(/\/$/, '');
+const STRAPI_TOKEN = sanitizeEnv(import.meta.env.VITE_STRAPI_API_TOKEN as string | undefined);
 
 interface StrapiCollectionResponse {
   data: unknown[];
@@ -107,7 +113,8 @@ const fetchCollection = async (collection: string): Promise<unknown[]> => {
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to fetch ${collection}: ${response.status}`);
+    const errorBody = await response.text().catch(() => '');
+    throw new Error(`Failed to fetch ${collection}: ${response.status} ${response.statusText}${errorBody ? ` - ${errorBody}` : ''}`);
   }
 
   const payload = (await response.json()) as StrapiCollectionResponse;
@@ -135,7 +142,8 @@ export const fetchProjects = async (): Promise<CmsProject[]> => {
         isFeatured: Boolean(item.isFeatured),
       };
     });
-  } catch {
+  } catch (error) {
+    console.error('[CMS] Using local fallback projects data.', error);
     return createFallbackProjects();
   }
 };
@@ -175,7 +183,8 @@ export const fetchExperiences = async (): Promise<CmsExperience[]> => {
         demoUrl: asString(asRecord(item.links).demo) || asString(item.demoUrl),
       };
     });
-  } catch {
+  } catch (error) {
+    console.error('[CMS] Using local fallback experiences data.', error);
     return createFallbackExperiences();
   }
 };
